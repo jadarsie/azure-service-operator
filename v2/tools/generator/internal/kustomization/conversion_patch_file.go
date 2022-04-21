@@ -7,6 +7,7 @@ package kustomization
 
 import (
 	"io/ioutil"
+	"strings"
 
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v3"
@@ -51,6 +52,9 @@ func NewConversionPatchFile(resourceName string) *ConversionPatchFile {
 			Name: resourceName,
 			Annotations: map[string]string{
 				certManagerInjectKey: certManagerInjectValue,
+				providerNameKey:      providerNameValue,
+				apiVersionKey:        apiVersionValue,
+				resourceTypeKey:      strings.Split(resourceName, ".")[0],
 			},
 		},
 		Spec: conversionPatchSpec{
@@ -98,6 +102,12 @@ const (
 	// The values here will be substituted by kusomization vars when
 	// this kustomize directory is built.
 	certManagerInjectValue = "$(CERTIFICATE_NAMESPACE)/$(CERTIFICATE_NAME)"
+
+	providerNameKey   = "management.azure.com/providerName"
+	providerNameValue = "Microsoft.ASOExtension"
+	apiVersionKey     = "management.azure.com/api-version"
+	apiVersionValue   = "2020-01-01-preview"
+	resourceTypeKey   = "management.azure.com/resourceType"
 )
 
 type conversionPatchMetadata struct {
