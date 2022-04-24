@@ -15,7 +15,7 @@ You will need:
 
 * A previous operator hub bundle (currently this is `quay.io/operatorhubio/azure-service-operator:v0.37.0`).
 This is the latest released operator bundle, which might not correspond to the last version of the operator image (if some versions have been skipped).
-* A newly published operator image that needs packaging into an operator bundle (for example `mcr.microsoft.com/k8s/azureserviceoperator:1.0.23956`)
+* A newly published operator image that needs packaging into an operator bundle (for example `jadarsie.azurecr.io/azureserviceoperator:1.0.23956`)
 
 ### Set up your cluster
 

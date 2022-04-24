@@ -95,7 +95,7 @@ The following table lists the configurable parameters of the azure-service-opera
 | `azureUseMI`  | Set to True if using Managed Identity for authentication | `False` |
 | `installAadPodIdentity` | Set to `True` to install [aad-pod-identity](https://github.com/Azure/aad-pod-identity), or leave false if you already have it installed. You will have to create the `AzureIdentity` and `AzureIdentityBinding` yourself if you already have it installed | `False` |
 | `azureOperatorKeyvault`  | Set this value with the name of your Azure Key Vault resource if you prefer to store secrets in Key Vault rather than as Kubernetes secrets (default) | `` |
-| `image.repository`  | Image repository | `mcr.microsoft.com/k8s/azureserviceoperator:latest` |
+| `image.repository`  | Image repository | `jadarsie.azurecr.io/azureserviceoperator:latest` |
 | `cloudEnvironment`  | Set the cloud environment, possible values include: AzurePublicCloud, AzureUSGovernmentCloud, AzureChinaCloud, AzureGermanCloud | `AzurePublicCloud` |
 | `createNamespace`  | Set to True if you would like the namespace autocreated, otherwise False if you have an existing namespace. If using an existing namespace, the `namespace` field must also be updated | `True` |
 | `namespace`  | Configure a custom namespace to deploy the operator into | `azureoperator-system` |

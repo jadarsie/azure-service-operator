@@ -134,7 +134,7 @@ helm upgrade --install aso https://github.com/Azure/azure-service-operator/raw/m
     --set azureTenantID=$(cat $CREDENTIAL_DIR/operator_sp_creds.json | jq -r .tenantId) \
     --set azureClientID=$(cat $CREDENTIAL_DIR/operator_sp_creds.json | jq -r .clientId) \
     --set azureClientSecret=$(cat $CREDENTIAL_DIR/operator_sp_creds.json | jq -r .clientSecret) \
-    --set image.repository="mcr.microsoft.com/k8s/azureserviceoperator:0.1.11139"
+    --set image.repository="jadarsie.azurecr.io/azureserviceoperator:0.1.11139"
 ```
 
 Successful output should look like this:

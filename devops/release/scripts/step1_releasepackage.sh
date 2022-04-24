@@ -32,7 +32,7 @@ cp -r _Azure.azure-service-operator/drop/setup.yaml ./release/config
 IMG=${AZURESERVICEOPERATOR_IMAGE_PUBLIC/"public/"/"mcr.microsoft.com/"}
 echo "updating the manager image "
 echo $IMG
-sed -i'' -e 's@image: candidate/k8s@image: mcr.microsoft.com/k8s@' ./release/config/setup.yaml
+sed -i'' -e 's@image: candidate/k8s@image: jadarsie.azurecr.io@' ./release/config/setup.yaml
 echo  ${AZURESERVICEOPERATOR_IMAGE_PUBLIC/"public/"/"mcr.microsoft.com/"} >> ./release/notes.txt
 cat ./release/config/setup.yaml
 echo 'ls ./release'
