@@ -54,7 +54,7 @@ func NewConversionPatchFile(resourceName string) *ConversionPatchFile {
 				certManagerInjectKey: certManagerInjectValue,
 				providerNameKey:      providerNameValue,
 				apiVersionKey:        apiVersionValue,
-				resourceTypeKey:      strings.Split(resourceName, ".")[0],
+				resourceTypeKey:      typeKey(resourceName),
 			},
 		},
 		Spec: conversionPatchSpec{
@@ -91,6 +91,13 @@ func (p *ConversionPatchFile) Save(destination string) error {
 	}
 
 	return nil
+}
+
+// typeKey computes the name of the projected resource type key out of the CRD name
+// by removing the "azure.com" suffix and replacing "."s for "-"s
+func typeKey(resourceName string) string {
+	slice := strings.Split(resourceName, ".")
+	return strings.Join(slice[:len(slice)-2], "-")
 }
 
 const (
