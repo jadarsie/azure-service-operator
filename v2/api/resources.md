@@ -77,21 +77,6 @@ These are the resources with Azure Service Operator support committed to our **m
 | Topic             | 2020-06-01  | v1beta20200601      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/eventgrid/v1beta20200601_topic.yaml)                  |
 | Topic             | 2020-06-01  | v1alpha1api20200601 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/eventgrid/v1alpha1api20200601_topic.yaml)             |
 
-## Eventhub
-
-| Resource                             | ARM Version | CRD Version         | Sample                                                                                                                                                     |
-|--------------------------------------|-------------|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Namespace                            | 2021-11-01  | v1beta20211101      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/eventhub/v1beta20211101_namespace.yaml)                                 |
-| Namespace                            | 2021-11-01  | v1alpha1api20211101 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/eventhub/v1alpha1api20211101_namespace.yaml)                            |
-| NamespacesAuthorizationRule          | 2021-11-01  | v1beta20211101      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/eventhub/v1beta20211101_namespacesauthorizationrule.yaml)               |
-| NamespacesAuthorizationRule          | 2021-11-01  | v1alpha1api20211101 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/eventhub/v1alpha1api20211101_namespacesauthorizationrule.yaml)          |
-| NamespacesEventhub                   | 2021-11-01  | v1beta20211101      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/eventhub/v1beta20211101_namespaceseventhub.yaml)                        |
-| NamespacesEventhub                   | 2021-11-01  | v1alpha1api20211101 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/eventhub/v1alpha1api20211101_namespaceseventhub.yaml)                   |
-| NamespacesEventhubsAuthorizationRule | 2021-11-01  | v1beta20211101      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/eventhub/v1beta20211101_namespaceseventhubsauthorizationrule.yaml)      |
-| NamespacesEventhubsAuthorizationRule | 2021-11-01  | v1alpha1api20211101 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/eventhub/v1alpha1api20211101_namespaceseventhubsauthorizationrule.yaml) |
-| NamespacesEventhubsConsumerGroup     | 2021-11-01  | v1beta20211101      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/eventhub/v1beta20211101_namespaceseventhubsconsumergroup.yaml)          |
-| NamespacesEventhubsConsumerGroup     | 2021-11-01  | v1alpha1api20211101 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/eventhub/v1alpha1api20211101_namespaceseventhubsconsumergroup.yaml)     |
-
 ## Insights
 
 | Resource  | ARM Version        | CRD Version                | Sample                                                                                                                               |
@@ -137,17 +122,6 @@ These are the resources with Azure Service Operator support committed to our **m
 |-----------|-------------|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | Workspace | 2021-06-01  | v1beta20210601      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/operationalinsights/v1beta20210601_workspace.yaml)      |
 | Workspace | 2021-06-01  | v1alpha1api20210601 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/operationalinsights/v1alpha1api20210601_workspace.yaml) |
-
-## Servicebus
-
-| Resource        | ARM Version        | CRD Version                | Sample                                                                                                                                         |
-|-----------------|--------------------|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Namespace       | 2021-01-01-preview | v1beta20210101preview      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/servicebus/v1beta20210101preview_namespace.yaml)            |
-| Namespace       | 2021-01-01-preview | v1alpha1api20210101preview | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/servicebus/v1alpha1api20210101preview_namespace.yaml)       |
-| NamespacesQueue | 2021-01-01-preview | v1beta20210101preview      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/servicebus/v1beta20210101preview_namespacesqueue.yaml)      |
-| NamespacesQueue | 2021-01-01-preview | v1alpha1api20210101preview | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/servicebus/v1alpha1api20210101preview_namespacesqueue.yaml) |
-| NamespacesTopic | 2021-01-01-preview | v1beta20210101preview      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/servicebus/v1beta20210101preview_namespacestopic.yaml)      |
-| NamespacesTopic | 2021-01-01-preview | v1alpha1api20210101preview | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/servicebus/v1alpha1api20210101preview_namespacestopic.yaml) |
 
 ## Signalrservice
 

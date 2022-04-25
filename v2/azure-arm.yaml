@@ -33,10 +33,6 @@ typeFilters:
     name: Expression
     because: expression is an ARM template construct which doesn't belong in CRDs
   - action: include
-    group: servicebus
-    version: v*20210101preview
-    because: We want to export this particular preview version
-  - action: include
     group: insights
     version: v*20180501preview
     because: We're using webTests from this. There is a "newer" version but it's not actually supported, see https://github.com/Azure/azure-rest-api-specs/issues/14827
@@ -73,6 +69,12 @@ typeFilters:
     because: K8s Bridge demo
   - action: prune
     group: dbforpostgresql
+    because: K8s Bridge demo
+  - action: prune
+    group: eventhub
+    because: K8s Bridge demo
+  - action: prune
+    group: servicebus
     because: K8s Bridge demo
   - action: prune
     group: timeseriesinsights
@@ -219,11 +221,6 @@ typeTransformers:
     remove: true
     because: The UserAssignedIdentities property is entirely readOnly but is modelled poorly in the JSON schemas. See discussion on https://github.com/Azure/azure-resource-manager-schemas/issues/835
   - name: Identity
-    group: servicebus
-    property: UserAssignedIdentities
-    remove: true
-    because: The UserAssignedIdentities property is entirely readOnly but is modelled poorly in the JSON schemas. See discussion on https://github.com/Azure/azure-resource-manager-schemas/issues/835
-  - name: Identity
     group: storage
     property: UserAssignedIdentities
     remove: true
@@ -243,26 +240,6 @@ typeTransformers:
     property: UserAssignedIdentities
     remove: true
     because: The UserAssignedIdentities property is entirely readOnly but is modelled poorly in the JSON schemas. See discussion on https://github.com/Azure/azure-resource-manager-schemas/issues/835
-  - name: Identity
-    group: eventhub
-    property: UserAssignedIdentities
-    remove: true
-    because: The UserAssignedIdentities property is entirely readOnly but is modelled poorly in the JSON schemas. See discussion on https://github.com/Azure/azure-resource-manager-schemas/issues/835
-  - name: PrivateEndpointConnectionProperties
-    group: eventhub
-    property: PrivateLinkServiceConnectionState
-    remove: true
-    because: This property should be marked readonly
-  - name: PrivateEndpointConnectionProperties
-    group: eventhub
-    property: ProvisioningState
-    remove: true
-    because: This property should be marked readonly
-  - name: NamespacesEventhubs_Spec_Properties
-    group: eventhub
-    property: Status
-    remove: true
-    because: This property should be marked readonly
   - group: eventgrid
     version: v*20190601
     name: Domains_Spec
@@ -277,21 +254,6 @@ typeTransformers:
     because: it has no writable properties in swagger
 
   # Deal with properties that should have been marked readOnly but weren't
-  - group: servicebus
-    name: Namespaces_Spec_Properties  # This type is subsequently flattened into Namespaces_Spec. I don't know why it's called this either (I think it should be SBNamespaceProperties?)
-    property: PrivateEndpointConnections
-    remove: true
-    because: This property should have been marked readonly but wasn't.
-  - group: servicebus
-    name: SBQueueProperties  # This type is subsequently flattened into NamespacesQueues_Spec
-    property: Status
-    remove: true
-    because: This property should have been marked readonly but wasn't.
-  - group: servicebus
-    name: SBTopicProperties  # This type is subsequently flattened into NamespacesTopics_Spec
-    property: Status
-    remove: true
-    because: This property should have been marked readonly but wasn't.
   - group: compute
     name: DiskProperties  # This type is subsequently flattened into Disks_Spec
     property: DiskState
@@ -358,11 +320,6 @@ status:
       # force the namespace here or it can fall foul of the sibling-name-collision test
       basePath: 'security/resource-manager/common',
       namespace: 'Microsoft.Security'
-    },
-    {
-      # force the namespace here or it can fall foul of the sibling-name-collision test
-      basePath: 'eventhub/resource-manager/common',
-      namespace: 'Microsoft.EventHub'
     },
     {
       # force the namespace here or it can fall foul of the sibling-name-collision test
@@ -754,30 +711,6 @@ objectModelConfiguration:
       StorageBlobDeadLetterDestinationProperties:
         ResourceId:
           $armReference: true
-  eventhub:
-    2021-11-01:
-      DestinationProperties:
-        StorageAccountResourceId:
-          $armReference: true
-      Namespace:
-        $export: true
-      NamespacesAuthorizationRule:
-        $export: true
-      NamespacesEventhub:
-        $export: true
-      NamespacesEventhubsAuthorizationRule:
-        $export: true
-      NamespacesEventhubsConsumergroup:
-        $exportAs: NamespacesEventhubsConsumerGroup
-      Namespaces_Spec_Properties:
-        ClusterArmId:
-          $armReference: true
-      PrivateEndpoint:
-        Id:
-          $armReference: true
-      UserAssignedIdentityProperties:
-        UserAssignedIdentity:
-          $armReference: true
   insights:
     2018-05-01-preview:
       Webtest:
@@ -834,17 +767,6 @@ objectModelConfiguration:
         $export: true
       WorkspaceFeatures:
         ClusterResourceId:
-          $armReference: true
-  servicebus:
-    2021-01-01-preview:
-      Namespace:
-        $export: true
-      NamespacesQueue:
-        $export: true
-      NamespacesTopic:
-        $export: true
-      UserAssignedIdentityProperties:
-        UserAssignedIdentity:
           $armReference: true
   signalrservice:
     2021-10-01:

@@ -51,11 +51,6 @@ import (
 	eventgridv1alpha1api20200601storage "github.com/Azure/azure-service-operator/v2/api/eventgrid/v1alpha1api20200601storage"
 	eventgridv1beta20200601 "github.com/Azure/azure-service-operator/v2/api/eventgrid/v1beta20200601"
 	eventgridv1beta20200601storage "github.com/Azure/azure-service-operator/v2/api/eventgrid/v1beta20200601storage"
-	eventhubcustomizations "github.com/Azure/azure-service-operator/v2/api/eventhub/customizations"
-	eventhubv1alpha1api20211101 "github.com/Azure/azure-service-operator/v2/api/eventhub/v1alpha1api20211101"
-	eventhubv1alpha1api20211101storage "github.com/Azure/azure-service-operator/v2/api/eventhub/v1alpha1api20211101storage"
-	eventhubv1beta20211101 "github.com/Azure/azure-service-operator/v2/api/eventhub/v1beta20211101"
-	eventhubv1beta20211101storage "github.com/Azure/azure-service-operator/v2/api/eventhub/v1beta20211101storage"
 	insightscustomizations "github.com/Azure/azure-service-operator/v2/api/insights/customizations"
 	insightsv1alpha1api20180501preview "github.com/Azure/azure-service-operator/v2/api/insights/v1alpha1api20180501preview"
 	insightsv1alpha1api20180501previewstorage "github.com/Azure/azure-service-operator/v2/api/insights/v1alpha1api20180501previewstorage"
@@ -80,11 +75,6 @@ import (
 	operationalinsightsv1alpha1api20210601storage "github.com/Azure/azure-service-operator/v2/api/operationalinsights/v1alpha1api20210601storage"
 	operationalinsightsv1beta20210601 "github.com/Azure/azure-service-operator/v2/api/operationalinsights/v1beta20210601"
 	operationalinsightsv1beta20210601storage "github.com/Azure/azure-service-operator/v2/api/operationalinsights/v1beta20210601storage"
-	servicebuscustomizations "github.com/Azure/azure-service-operator/v2/api/servicebus/customizations"
-	servicebusv1alpha1api20210101preview "github.com/Azure/azure-service-operator/v2/api/servicebus/v1alpha1api20210101preview"
-	servicebusv1alpha1api20210101previewstorage "github.com/Azure/azure-service-operator/v2/api/servicebus/v1alpha1api20210101previewstorage"
-	servicebusv1beta20210101preview "github.com/Azure/azure-service-operator/v2/api/servicebus/v1beta20210101preview"
-	servicebusv1beta20210101previewstorage "github.com/Azure/azure-service-operator/v2/api/servicebus/v1beta20210101previewstorage"
 	signalrservicecustomizations "github.com/Azure/azure-service-operator/v2/api/signalrservice/customizations"
 	signalrservicev1alpha1api20211001 "github.com/Azure/azure-service-operator/v2/api/signalrservice/v1alpha1api20211001"
 	signalrservicev1alpha1api20211001storage "github.com/Azure/azure-service-operator/v2/api/signalrservice/v1alpha1api20211001storage"
@@ -228,31 +218,6 @@ func getKnownStorageTypes() []*registration.StorageType {
 		Watches: []registration.Watch{},
 	})
 	result = append(result, &registration.StorageType{
-		Obj:     new(eventhubv1beta20211101storage.Namespace),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(eventhubv1beta20211101storage.NamespacesAuthorizationRule),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(eventhubv1beta20211101storage.NamespacesEventhub),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(eventhubv1beta20211101storage.NamespacesEventhubsAuthorizationRule),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(eventhubv1beta20211101storage.NamespacesEventhubsConsumerGroup),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
 		Obj:     new(insightsv1beta20180501previewstorage.Webtest),
 		Indexes: []registration.Index{},
 		Watches: []registration.Watch{},
@@ -314,21 +279,6 @@ func getKnownStorageTypes() []*registration.StorageType {
 	})
 	result = append(result, &registration.StorageType{
 		Obj:     new(operationalinsightsv1beta20210601storage.Workspace),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(servicebusv1beta20210101previewstorage.Namespace),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(servicebusv1beta20210101previewstorage.NamespacesQueue),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(servicebusv1beta20210101previewstorage.NamespacesTopic),
 		Indexes: []registration.Index{},
 		Watches: []registration.Watch{},
 	})
@@ -453,26 +403,6 @@ func getKnownTypes() []client.Object {
 	result = append(result, new(eventgridv1beta20200601storage.DomainsTopic))
 	result = append(result, new(eventgridv1beta20200601storage.EventSubscription))
 	result = append(result, new(eventgridv1beta20200601storage.Topic))
-	result = append(result, new(eventhubv1alpha1api20211101.Namespace))
-	result = append(result, new(eventhubv1alpha1api20211101.NamespacesAuthorizationRule))
-	result = append(result, new(eventhubv1alpha1api20211101.NamespacesEventhub))
-	result = append(result, new(eventhubv1alpha1api20211101.NamespacesEventhubsAuthorizationRule))
-	result = append(result, new(eventhubv1alpha1api20211101.NamespacesEventhubsConsumerGroup))
-	result = append(result, new(eventhubv1alpha1api20211101storage.Namespace))
-	result = append(result, new(eventhubv1alpha1api20211101storage.NamespacesAuthorizationRule))
-	result = append(result, new(eventhubv1alpha1api20211101storage.NamespacesEventhub))
-	result = append(result, new(eventhubv1alpha1api20211101storage.NamespacesEventhubsAuthorizationRule))
-	result = append(result, new(eventhubv1alpha1api20211101storage.NamespacesEventhubsConsumerGroup))
-	result = append(result, new(eventhubv1beta20211101.Namespace))
-	result = append(result, new(eventhubv1beta20211101.NamespacesAuthorizationRule))
-	result = append(result, new(eventhubv1beta20211101.NamespacesEventhub))
-	result = append(result, new(eventhubv1beta20211101.NamespacesEventhubsAuthorizationRule))
-	result = append(result, new(eventhubv1beta20211101.NamespacesEventhubsConsumerGroup))
-	result = append(result, new(eventhubv1beta20211101storage.Namespace))
-	result = append(result, new(eventhubv1beta20211101storage.NamespacesAuthorizationRule))
-	result = append(result, new(eventhubv1beta20211101storage.NamespacesEventhub))
-	result = append(result, new(eventhubv1beta20211101storage.NamespacesEventhubsAuthorizationRule))
-	result = append(result, new(eventhubv1beta20211101storage.NamespacesEventhubsConsumerGroup))
 	result = append(result, new(insightsv1alpha1api20180501preview.Webtest))
 	result = append(result, new(insightsv1alpha1api20180501previewstorage.Webtest))
 	result = append(result, new(insightsv1alpha1api20200202.Component))
@@ -525,18 +455,6 @@ func getKnownTypes() []client.Object {
 	result = append(result, new(operationalinsightsv1alpha1api20210601storage.Workspace))
 	result = append(result, new(operationalinsightsv1beta20210601.Workspace))
 	result = append(result, new(operationalinsightsv1beta20210601storage.Workspace))
-	result = append(result, new(servicebusv1alpha1api20210101preview.Namespace))
-	result = append(result, new(servicebusv1alpha1api20210101preview.NamespacesQueue))
-	result = append(result, new(servicebusv1alpha1api20210101preview.NamespacesTopic))
-	result = append(result, new(servicebusv1alpha1api20210101previewstorage.Namespace))
-	result = append(result, new(servicebusv1alpha1api20210101previewstorage.NamespacesQueue))
-	result = append(result, new(servicebusv1alpha1api20210101previewstorage.NamespacesTopic))
-	result = append(result, new(servicebusv1beta20210101preview.Namespace))
-	result = append(result, new(servicebusv1beta20210101preview.NamespacesQueue))
-	result = append(result, new(servicebusv1beta20210101preview.NamespacesTopic))
-	result = append(result, new(servicebusv1beta20210101previewstorage.Namespace))
-	result = append(result, new(servicebusv1beta20210101previewstorage.NamespacesQueue))
-	result = append(result, new(servicebusv1beta20210101previewstorage.NamespacesTopic))
 	result = append(result, new(signalrservicev1alpha1api20211001.SignalR))
 	result = append(result, new(signalrservicev1alpha1api20211001storage.SignalR))
 	result = append(result, new(signalrservicev1beta20211001.SignalR))
@@ -612,10 +530,6 @@ func createScheme() *runtime.Scheme {
 	_ = eventgridv1alpha1api20200601storage.AddToScheme(scheme)
 	_ = eventgridv1beta20200601.AddToScheme(scheme)
 	_ = eventgridv1beta20200601storage.AddToScheme(scheme)
-	_ = eventhubv1alpha1api20211101.AddToScheme(scheme)
-	_ = eventhubv1alpha1api20211101storage.AddToScheme(scheme)
-	_ = eventhubv1beta20211101.AddToScheme(scheme)
-	_ = eventhubv1beta20211101storage.AddToScheme(scheme)
 	_ = insightsv1alpha1api20180501preview.AddToScheme(scheme)
 	_ = insightsv1alpha1api20180501previewstorage.AddToScheme(scheme)
 	_ = insightsv1alpha1api20200202.AddToScheme(scheme)
@@ -636,10 +550,6 @@ func createScheme() *runtime.Scheme {
 	_ = operationalinsightsv1alpha1api20210601storage.AddToScheme(scheme)
 	_ = operationalinsightsv1beta20210601.AddToScheme(scheme)
 	_ = operationalinsightsv1beta20210601storage.AddToScheme(scheme)
-	_ = servicebusv1alpha1api20210101preview.AddToScheme(scheme)
-	_ = servicebusv1alpha1api20210101previewstorage.AddToScheme(scheme)
-	_ = servicebusv1beta20210101preview.AddToScheme(scheme)
-	_ = servicebusv1beta20210101previewstorage.AddToScheme(scheme)
 	_ = signalrservicev1alpha1api20211001.AddToScheme(scheme)
 	_ = signalrservicev1alpha1api20211001storage.AddToScheme(scheme)
 	_ = signalrservicev1beta20211001.AddToScheme(scheme)
@@ -674,11 +584,6 @@ func getResourceExtensions() []genruntime.ResourceExtension {
 	result = append(result, &eventgridcustomizations.DomainsTopicExtension{})
 	result = append(result, &eventgridcustomizations.EventSubscriptionExtension{})
 	result = append(result, &eventgridcustomizations.TopicExtension{})
-	result = append(result, &eventhubcustomizations.NamespaceExtension{})
-	result = append(result, &eventhubcustomizations.NamespacesAuthorizationRuleExtension{})
-	result = append(result, &eventhubcustomizations.NamespacesEventhubExtension{})
-	result = append(result, &eventhubcustomizations.NamespacesEventhubsAuthorizationRuleExtension{})
-	result = append(result, &eventhubcustomizations.NamespacesEventhubsConsumerGroupExtension{})
 	result = append(result, &insightscustomizations.ComponentExtension{})
 	result = append(result, &insightscustomizations.WebtestExtension{})
 	result = append(result, &managedidentitycustomizations.UserAssignedIdentityExtension{})
@@ -692,9 +597,6 @@ func getResourceExtensions() []genruntime.ResourceExtension {
 	result = append(result, &networkcustomizations.VirtualNetworksSubnetExtension{})
 	result = append(result, &networkcustomizations.VirtualNetworksVirtualNetworkPeeringExtension{})
 	result = append(result, &operationalinsightscustomizations.WorkspaceExtension{})
-	result = append(result, &servicebuscustomizations.NamespaceExtension{})
-	result = append(result, &servicebuscustomizations.NamespacesQueueExtension{})
-	result = append(result, &servicebuscustomizations.NamespacesTopicExtension{})
 	result = append(result, &signalrservicecustomizations.SignalRExtension{})
 	result = append(result, &storagecustomizations.StorageAccountExtension{})
 	result = append(result, &storagecustomizations.StorageAccountsBlobServiceExtension{})
