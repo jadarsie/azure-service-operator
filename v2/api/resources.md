@@ -130,20 +130,3 @@ These are the resources with Azure Service Operator support committed to our **m
 | SignalR  | 2021-10-01  | v1beta20211001      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/signalrservice/v1beta20211001_signalr.yaml)      |
 | SignalR  | 2021-10-01  | v1alpha1api20211001 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/signalrservice/v1alpha1api20211001_signalr.yaml) |
 
-## Storage
-
-| Resource                             | ARM Version | CRD Version         | Sample                                                                                                                                                    |
-|--------------------------------------|-------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| StorageAccount                       | 2021-04-01  | v1beta20210401      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/storage/v1beta20210401_storageaccount.yaml)                            |
-| StorageAccount                       | 2021-04-01  | v1alpha1api20210401 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/storage/v1alpha1api20210401_storageaccount.yaml)                       |
-| StorageAccountsBlobService           | 2021-04-01  | v1beta20210401      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/storage/v1beta20210401_storageaccountsblobservice.yaml)                |
-| StorageAccountsBlobService           | 2021-04-01  | v1alpha1api20210401 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/storage/v1alpha1api20210401_storageaccountsblobservice.yaml)           |
-| StorageAccountsBlobServicesContainer | 2021-04-01  | v1beta20210401      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/storage/v1beta20210401_storageaccountsblobservicescontainer.yaml)      |
-| StorageAccountsBlobServicesContainer | 2021-04-01  | v1alpha1api20210401 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/storage/v1alpha1api20210401_storageaccountsblobservicescontainer.yaml) |
-| StorageAccountsManagementPolicy      | 2021-04-01  | v1beta20210401      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/storage/v1beta20210401_storageaccountsmanagementpolicy.yaml)           |
-| StorageAccountsManagementPolicy      | 2021-04-01  | v1alpha1api20210401 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/storage/v1alpha1api20210401_storageaccountsmanagementpolicy.yaml)      |
-| StorageAccountsQueueService          | 2021-04-01  | v1beta20210401      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/storage/v1beta20210401_storageaccountsqueueservice.yaml)               |
-| StorageAccountsQueueService          | 2021-04-01  | v1alpha1api20210401 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/storage/v1alpha1api20210401_storageaccountsqueueservice.yaml)          |
-| StorageAccountsQueueServicesQueue    | 2021-04-01  | v1beta20210401      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/storage/v1beta20210401_storageaccountsqueueservicesqueue.yaml)         |
-| StorageAccountsQueueServicesQueue    | 2021-04-01  | v1alpha1api20210401 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/storage/v1alpha1api20210401_storageaccountsqueueservicesqueue.yaml)    |
-

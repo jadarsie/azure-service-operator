@@ -80,11 +80,6 @@ import (
 	signalrservicev1alpha1api20211001storage "github.com/Azure/azure-service-operator/v2/api/signalrservice/v1alpha1api20211001storage"
 	signalrservicev1beta20211001 "github.com/Azure/azure-service-operator/v2/api/signalrservice/v1beta20211001"
 	signalrservicev1beta20211001storage "github.com/Azure/azure-service-operator/v2/api/signalrservice/v1beta20211001storage"
-	storagecustomizations "github.com/Azure/azure-service-operator/v2/api/storage/customizations"
-	storagev1alpha1api20210401 "github.com/Azure/azure-service-operator/v2/api/storage/v1alpha1api20210401"
-	storagev1alpha1api20210401storage "github.com/Azure/azure-service-operator/v2/api/storage/v1alpha1api20210401storage"
-	storagev1beta20210401 "github.com/Azure/azure-service-operator/v2/api/storage/v1beta20210401"
-	storagev1beta20210401storage "github.com/Azure/azure-service-operator/v2/api/storage/v1beta20210401storage"
 	"github.com/Azure/azure-service-operator/v2/pkg/genruntime"
 	"github.com/Azure/azure-service-operator/v2/pkg/genruntime/registration"
 	"k8s.io/api/core/v1"
@@ -287,36 +282,6 @@ func getKnownStorageTypes() []*registration.StorageType {
 		Indexes: []registration.Index{},
 		Watches: []registration.Watch{},
 	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(storagev1beta20210401storage.StorageAccount),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(storagev1beta20210401storage.StorageAccountsBlobService),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(storagev1beta20210401storage.StorageAccountsBlobServicesContainer),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(storagev1beta20210401storage.StorageAccountsManagementPolicy),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(storagev1beta20210401storage.StorageAccountsQueueService),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(storagev1beta20210401storage.StorageAccountsQueueServicesQueue),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
 	return result
 }
 
@@ -459,30 +424,6 @@ func getKnownTypes() []client.Object {
 	result = append(result, new(signalrservicev1alpha1api20211001storage.SignalR))
 	result = append(result, new(signalrservicev1beta20211001.SignalR))
 	result = append(result, new(signalrservicev1beta20211001storage.SignalR))
-	result = append(result, new(storagev1alpha1api20210401.StorageAccount))
-	result = append(result, new(storagev1alpha1api20210401.StorageAccountsBlobService))
-	result = append(result, new(storagev1alpha1api20210401.StorageAccountsBlobServicesContainer))
-	result = append(result, new(storagev1alpha1api20210401.StorageAccountsManagementPolicy))
-	result = append(result, new(storagev1alpha1api20210401.StorageAccountsQueueService))
-	result = append(result, new(storagev1alpha1api20210401.StorageAccountsQueueServicesQueue))
-	result = append(result, new(storagev1alpha1api20210401storage.StorageAccount))
-	result = append(result, new(storagev1alpha1api20210401storage.StorageAccountsBlobService))
-	result = append(result, new(storagev1alpha1api20210401storage.StorageAccountsBlobServicesContainer))
-	result = append(result, new(storagev1alpha1api20210401storage.StorageAccountsManagementPolicy))
-	result = append(result, new(storagev1alpha1api20210401storage.StorageAccountsQueueService))
-	result = append(result, new(storagev1alpha1api20210401storage.StorageAccountsQueueServicesQueue))
-	result = append(result, new(storagev1beta20210401.StorageAccount))
-	result = append(result, new(storagev1beta20210401.StorageAccountsBlobService))
-	result = append(result, new(storagev1beta20210401.StorageAccountsBlobServicesContainer))
-	result = append(result, new(storagev1beta20210401.StorageAccountsManagementPolicy))
-	result = append(result, new(storagev1beta20210401.StorageAccountsQueueService))
-	result = append(result, new(storagev1beta20210401.StorageAccountsQueueServicesQueue))
-	result = append(result, new(storagev1beta20210401storage.StorageAccount))
-	result = append(result, new(storagev1beta20210401storage.StorageAccountsBlobService))
-	result = append(result, new(storagev1beta20210401storage.StorageAccountsBlobServicesContainer))
-	result = append(result, new(storagev1beta20210401storage.StorageAccountsManagementPolicy))
-	result = append(result, new(storagev1beta20210401storage.StorageAccountsQueueService))
-	result = append(result, new(storagev1beta20210401storage.StorageAccountsQueueServicesQueue))
 	return result
 }
 
@@ -554,10 +495,6 @@ func createScheme() *runtime.Scheme {
 	_ = signalrservicev1alpha1api20211001storage.AddToScheme(scheme)
 	_ = signalrservicev1beta20211001.AddToScheme(scheme)
 	_ = signalrservicev1beta20211001storage.AddToScheme(scheme)
-	_ = storagev1alpha1api20210401.AddToScheme(scheme)
-	_ = storagev1alpha1api20210401storage.AddToScheme(scheme)
-	_ = storagev1beta20210401.AddToScheme(scheme)
-	_ = storagev1beta20210401storage.AddToScheme(scheme)
 	return scheme
 }
 
@@ -598,12 +535,6 @@ func getResourceExtensions() []genruntime.ResourceExtension {
 	result = append(result, &networkcustomizations.VirtualNetworksVirtualNetworkPeeringExtension{})
 	result = append(result, &operationalinsightscustomizations.WorkspaceExtension{})
 	result = append(result, &signalrservicecustomizations.SignalRExtension{})
-	result = append(result, &storagecustomizations.StorageAccountExtension{})
-	result = append(result, &storagecustomizations.StorageAccountsBlobServiceExtension{})
-	result = append(result, &storagecustomizations.StorageAccountsBlobServicesContainerExtension{})
-	result = append(result, &storagecustomizations.StorageAccountsManagementPolicyExtension{})
-	result = append(result, &storagecustomizations.StorageAccountsQueueServiceExtension{})
-	result = append(result, &storagecustomizations.StorageAccountsQueueServicesQueueExtension{})
 	return result
 }
 
