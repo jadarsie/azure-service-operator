@@ -46,21 +46,6 @@ import (
 	containerservicev1alpha1api20210501storage "github.com/Azure/azure-service-operator/v2/api/containerservice/v1alpha1api20210501storage"
 	containerservicev1beta20210501 "github.com/Azure/azure-service-operator/v2/api/containerservice/v1beta20210501"
 	containerservicev1beta20210501storage "github.com/Azure/azure-service-operator/v2/api/containerservice/v1beta20210501storage"
-	dbformysqlcustomizations "github.com/Azure/azure-service-operator/v2/api/dbformysql/customizations"
-	dbformysqlv1alpha1api20210501 "github.com/Azure/azure-service-operator/v2/api/dbformysql/v1alpha1api20210501"
-	dbformysqlv1alpha1api20210501storage "github.com/Azure/azure-service-operator/v2/api/dbformysql/v1alpha1api20210501storage"
-	dbformysqlv1beta20210501 "github.com/Azure/azure-service-operator/v2/api/dbformysql/v1beta20210501"
-	dbformysqlv1beta20210501storage "github.com/Azure/azure-service-operator/v2/api/dbformysql/v1beta20210501storage"
-	dbforpostgresqlcustomizations "github.com/Azure/azure-service-operator/v2/api/dbforpostgresql/customizations"
-	dbforpostgresqlv1alpha1api20210601 "github.com/Azure/azure-service-operator/v2/api/dbforpostgresql/v1alpha1api20210601"
-	dbforpostgresqlv1alpha1api20210601storage "github.com/Azure/azure-service-operator/v2/api/dbforpostgresql/v1alpha1api20210601storage"
-	dbforpostgresqlv1beta20210601 "github.com/Azure/azure-service-operator/v2/api/dbforpostgresql/v1beta20210601"
-	dbforpostgresqlv1beta20210601storage "github.com/Azure/azure-service-operator/v2/api/dbforpostgresql/v1beta20210601storage"
-	documentdbcustomizations "github.com/Azure/azure-service-operator/v2/api/documentdb/customizations"
-	documentdbv1alpha1api20210515 "github.com/Azure/azure-service-operator/v2/api/documentdb/v1alpha1api20210515"
-	documentdbv1alpha1api20210515storage "github.com/Azure/azure-service-operator/v2/api/documentdb/v1alpha1api20210515storage"
-	documentdbv1beta20210515 "github.com/Azure/azure-service-operator/v2/api/documentdb/v1beta20210515"
-	documentdbv1beta20210515storage "github.com/Azure/azure-service-operator/v2/api/documentdb/v1beta20210515storage"
 	eventgridcustomizations "github.com/Azure/azure-service-operator/v2/api/eventgrid/customizations"
 	eventgridv1alpha1api20200601 "github.com/Azure/azure-service-operator/v2/api/eventgrid/v1alpha1api20200601"
 	eventgridv1alpha1api20200601storage "github.com/Azure/azure-service-operator/v2/api/eventgrid/v1alpha1api20200601storage"
@@ -219,121 +204,6 @@ func getKnownStorageTypes() []*registration.StorageType {
 	})
 	result = append(result, &registration.StorageType{
 		Obj:     new(containerservicev1beta20210501storage.ManagedClustersAgentPool),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj: new(dbformysqlv1beta20210501storage.FlexibleServer),
-		Indexes: []registration.Index{
-			{
-				Key:  ".spec.administratorLoginPassword",
-				Func: indexDbformysqlFlexibleServerAdministratorLoginPassword,
-			},
-		},
-		Watches: []registration.Watch{
-			{
-				Src:              &source.Kind{Type: &v1.Secret{}},
-				MakeEventHandler: watchSecretsFactory([]string{".spec.administratorLoginPassword"}, &dbformysqlv1beta20210501storage.FlexibleServerList{}),
-			},
-		},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(dbformysqlv1beta20210501storage.FlexibleServersDatabase),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(dbformysqlv1beta20210501storage.FlexibleServersFirewallRule),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj: new(dbforpostgresqlv1beta20210601storage.FlexibleServer),
-		Indexes: []registration.Index{
-			{
-				Key:  ".spec.administratorLoginPassword",
-				Func: indexDbforpostgresqlFlexibleServerAdministratorLoginPassword,
-			},
-		},
-		Watches: []registration.Watch{
-			{
-				Src:              &source.Kind{Type: &v1.Secret{}},
-				MakeEventHandler: watchSecretsFactory([]string{".spec.administratorLoginPassword"}, &dbforpostgresqlv1beta20210601storage.FlexibleServerList{}),
-			},
-		},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(dbforpostgresqlv1beta20210601storage.FlexibleServersConfiguration),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(dbforpostgresqlv1beta20210601storage.FlexibleServersDatabase),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(dbforpostgresqlv1beta20210601storage.FlexibleServersFirewallRule),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(documentdbv1beta20210515storage.DatabaseAccount),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(documentdbv1beta20210515storage.MongodbDatabase),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(documentdbv1beta20210515storage.MongodbDatabaseCollection),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(documentdbv1beta20210515storage.MongodbDatabaseCollectionThroughputSetting),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(documentdbv1beta20210515storage.MongodbDatabaseThroughputSetting),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(documentdbv1beta20210515storage.SqlDatabase),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(documentdbv1beta20210515storage.SqlDatabaseContainer),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(documentdbv1beta20210515storage.SqlDatabaseContainerStoredProcedure),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(documentdbv1beta20210515storage.SqlDatabaseContainerThroughputSetting),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(documentdbv1beta20210515storage.SqlDatabaseContainerTrigger),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(documentdbv1beta20210515storage.SqlDatabaseContainerUserDefinedFunction),
-		Indexes: []registration.Index{},
-		Watches: []registration.Watch{},
-	})
-	result = append(result, &registration.StorageType{
-		Obj:     new(documentdbv1beta20210515storage.SqlDatabaseThroughputSetting),
 		Indexes: []registration.Index{},
 		Watches: []registration.Watch{},
 	})
@@ -567,82 +437,6 @@ func getKnownTypes() []client.Object {
 	result = append(result, new(containerservicev1beta20210501.ManagedClustersAgentPool))
 	result = append(result, new(containerservicev1beta20210501storage.ManagedCluster))
 	result = append(result, new(containerservicev1beta20210501storage.ManagedClustersAgentPool))
-	result = append(result, new(dbformysqlv1alpha1api20210501.FlexibleServer))
-	result = append(result, new(dbformysqlv1alpha1api20210501.FlexibleServersDatabase))
-	result = append(result, new(dbformysqlv1alpha1api20210501.FlexibleServersFirewallRule))
-	result = append(result, new(dbformysqlv1alpha1api20210501storage.FlexibleServer))
-	result = append(result, new(dbformysqlv1alpha1api20210501storage.FlexibleServersDatabase))
-	result = append(result, new(dbformysqlv1alpha1api20210501storage.FlexibleServersFirewallRule))
-	result = append(result, new(dbformysqlv1beta20210501.FlexibleServer))
-	result = append(result, new(dbformysqlv1beta20210501.FlexibleServersDatabase))
-	result = append(result, new(dbformysqlv1beta20210501.FlexibleServersFirewallRule))
-	result = append(result, new(dbformysqlv1beta20210501storage.FlexibleServer))
-	result = append(result, new(dbformysqlv1beta20210501storage.FlexibleServersDatabase))
-	result = append(result, new(dbformysqlv1beta20210501storage.FlexibleServersFirewallRule))
-	result = append(result, new(dbforpostgresqlv1alpha1api20210601.FlexibleServer))
-	result = append(result, new(dbforpostgresqlv1alpha1api20210601.FlexibleServersConfiguration))
-	result = append(result, new(dbforpostgresqlv1alpha1api20210601.FlexibleServersDatabase))
-	result = append(result, new(dbforpostgresqlv1alpha1api20210601.FlexibleServersFirewallRule))
-	result = append(result, new(dbforpostgresqlv1alpha1api20210601storage.FlexibleServer))
-	result = append(result, new(dbforpostgresqlv1alpha1api20210601storage.FlexibleServersConfiguration))
-	result = append(result, new(dbforpostgresqlv1alpha1api20210601storage.FlexibleServersDatabase))
-	result = append(result, new(dbforpostgresqlv1alpha1api20210601storage.FlexibleServersFirewallRule))
-	result = append(result, new(dbforpostgresqlv1beta20210601.FlexibleServer))
-	result = append(result, new(dbforpostgresqlv1beta20210601.FlexibleServersConfiguration))
-	result = append(result, new(dbforpostgresqlv1beta20210601.FlexibleServersDatabase))
-	result = append(result, new(dbforpostgresqlv1beta20210601.FlexibleServersFirewallRule))
-	result = append(result, new(dbforpostgresqlv1beta20210601storage.FlexibleServer))
-	result = append(result, new(dbforpostgresqlv1beta20210601storage.FlexibleServersConfiguration))
-	result = append(result, new(dbforpostgresqlv1beta20210601storage.FlexibleServersDatabase))
-	result = append(result, new(dbforpostgresqlv1beta20210601storage.FlexibleServersFirewallRule))
-	result = append(result, new(documentdbv1alpha1api20210515.DatabaseAccount))
-	result = append(result, new(documentdbv1alpha1api20210515.MongodbDatabase))
-	result = append(result, new(documentdbv1alpha1api20210515.MongodbDatabaseCollection))
-	result = append(result, new(documentdbv1alpha1api20210515.MongodbDatabaseCollectionThroughputSetting))
-	result = append(result, new(documentdbv1alpha1api20210515.MongodbDatabaseThroughputSetting))
-	result = append(result, new(documentdbv1alpha1api20210515.SqlDatabase))
-	result = append(result, new(documentdbv1alpha1api20210515.SqlDatabaseContainer))
-	result = append(result, new(documentdbv1alpha1api20210515.SqlDatabaseContainerStoredProcedure))
-	result = append(result, new(documentdbv1alpha1api20210515.SqlDatabaseContainerThroughputSetting))
-	result = append(result, new(documentdbv1alpha1api20210515.SqlDatabaseContainerTrigger))
-	result = append(result, new(documentdbv1alpha1api20210515.SqlDatabaseContainerUserDefinedFunction))
-	result = append(result, new(documentdbv1alpha1api20210515.SqlDatabaseThroughputSetting))
-	result = append(result, new(documentdbv1alpha1api20210515storage.DatabaseAccount))
-	result = append(result, new(documentdbv1alpha1api20210515storage.MongodbDatabase))
-	result = append(result, new(documentdbv1alpha1api20210515storage.MongodbDatabaseCollection))
-	result = append(result, new(documentdbv1alpha1api20210515storage.MongodbDatabaseCollectionThroughputSetting))
-	result = append(result, new(documentdbv1alpha1api20210515storage.MongodbDatabaseThroughputSetting))
-	result = append(result, new(documentdbv1alpha1api20210515storage.SqlDatabase))
-	result = append(result, new(documentdbv1alpha1api20210515storage.SqlDatabaseContainer))
-	result = append(result, new(documentdbv1alpha1api20210515storage.SqlDatabaseContainerStoredProcedure))
-	result = append(result, new(documentdbv1alpha1api20210515storage.SqlDatabaseContainerThroughputSetting))
-	result = append(result, new(documentdbv1alpha1api20210515storage.SqlDatabaseContainerTrigger))
-	result = append(result, new(documentdbv1alpha1api20210515storage.SqlDatabaseContainerUserDefinedFunction))
-	result = append(result, new(documentdbv1alpha1api20210515storage.SqlDatabaseThroughputSetting))
-	result = append(result, new(documentdbv1beta20210515.DatabaseAccount))
-	result = append(result, new(documentdbv1beta20210515.MongodbDatabase))
-	result = append(result, new(documentdbv1beta20210515.MongodbDatabaseCollection))
-	result = append(result, new(documentdbv1beta20210515.MongodbDatabaseCollectionThroughputSetting))
-	result = append(result, new(documentdbv1beta20210515.MongodbDatabaseThroughputSetting))
-	result = append(result, new(documentdbv1beta20210515.SqlDatabase))
-	result = append(result, new(documentdbv1beta20210515.SqlDatabaseContainer))
-	result = append(result, new(documentdbv1beta20210515.SqlDatabaseContainerStoredProcedure))
-	result = append(result, new(documentdbv1beta20210515.SqlDatabaseContainerThroughputSetting))
-	result = append(result, new(documentdbv1beta20210515.SqlDatabaseContainerTrigger))
-	result = append(result, new(documentdbv1beta20210515.SqlDatabaseContainerUserDefinedFunction))
-	result = append(result, new(documentdbv1beta20210515.SqlDatabaseThroughputSetting))
-	result = append(result, new(documentdbv1beta20210515storage.DatabaseAccount))
-	result = append(result, new(documentdbv1beta20210515storage.MongodbDatabase))
-	result = append(result, new(documentdbv1beta20210515storage.MongodbDatabaseCollection))
-	result = append(result, new(documentdbv1beta20210515storage.MongodbDatabaseCollectionThroughputSetting))
-	result = append(result, new(documentdbv1beta20210515storage.MongodbDatabaseThroughputSetting))
-	result = append(result, new(documentdbv1beta20210515storage.SqlDatabase))
-	result = append(result, new(documentdbv1beta20210515storage.SqlDatabaseContainer))
-	result = append(result, new(documentdbv1beta20210515storage.SqlDatabaseContainerStoredProcedure))
-	result = append(result, new(documentdbv1beta20210515storage.SqlDatabaseContainerThroughputSetting))
-	result = append(result, new(documentdbv1beta20210515storage.SqlDatabaseContainerTrigger))
-	result = append(result, new(documentdbv1beta20210515storage.SqlDatabaseContainerUserDefinedFunction))
-	result = append(result, new(documentdbv1beta20210515storage.SqlDatabaseThroughputSetting))
 	result = append(result, new(eventgridv1alpha1api20200601.Domain))
 	result = append(result, new(eventgridv1alpha1api20200601.DomainsTopic))
 	result = append(result, new(eventgridv1alpha1api20200601.EventSubscription))
@@ -814,18 +608,6 @@ func createScheme() *runtime.Scheme {
 	_ = containerservicev1alpha1api20210501storage.AddToScheme(scheme)
 	_ = containerservicev1beta20210501.AddToScheme(scheme)
 	_ = containerservicev1beta20210501storage.AddToScheme(scheme)
-	_ = dbformysqlv1alpha1api20210501.AddToScheme(scheme)
-	_ = dbformysqlv1alpha1api20210501storage.AddToScheme(scheme)
-	_ = dbformysqlv1beta20210501.AddToScheme(scheme)
-	_ = dbformysqlv1beta20210501storage.AddToScheme(scheme)
-	_ = dbforpostgresqlv1alpha1api20210601.AddToScheme(scheme)
-	_ = dbforpostgresqlv1alpha1api20210601storage.AddToScheme(scheme)
-	_ = dbforpostgresqlv1beta20210601.AddToScheme(scheme)
-	_ = dbforpostgresqlv1beta20210601storage.AddToScheme(scheme)
-	_ = documentdbv1alpha1api20210515.AddToScheme(scheme)
-	_ = documentdbv1alpha1api20210515storage.AddToScheme(scheme)
-	_ = documentdbv1beta20210515.AddToScheme(scheme)
-	_ = documentdbv1beta20210515storage.AddToScheme(scheme)
 	_ = eventgridv1alpha1api20200601.AddToScheme(scheme)
 	_ = eventgridv1alpha1api20200601storage.AddToScheme(scheme)
 	_ = eventgridv1beta20200601.AddToScheme(scheme)
@@ -888,25 +670,6 @@ func getResourceExtensions() []genruntime.ResourceExtension {
 	result = append(result, &containerregistrycustomizations.RegistryExtension{})
 	result = append(result, &containerservicecustomizations.ManagedClusterExtension{})
 	result = append(result, &containerservicecustomizations.ManagedClustersAgentPoolExtension{})
-	result = append(result, &dbformysqlcustomizations.FlexibleServerExtension{})
-	result = append(result, &dbformysqlcustomizations.FlexibleServersDatabaseExtension{})
-	result = append(result, &dbformysqlcustomizations.FlexibleServersFirewallRuleExtension{})
-	result = append(result, &dbforpostgresqlcustomizations.FlexibleServerExtension{})
-	result = append(result, &dbforpostgresqlcustomizations.FlexibleServersConfigurationExtension{})
-	result = append(result, &dbforpostgresqlcustomizations.FlexibleServersDatabaseExtension{})
-	result = append(result, &dbforpostgresqlcustomizations.FlexibleServersFirewallRuleExtension{})
-	result = append(result, &documentdbcustomizations.DatabaseAccountExtension{})
-	result = append(result, &documentdbcustomizations.MongodbDatabaseCollectionExtension{})
-	result = append(result, &documentdbcustomizations.MongodbDatabaseCollectionThroughputSettingExtension{})
-	result = append(result, &documentdbcustomizations.MongodbDatabaseExtension{})
-	result = append(result, &documentdbcustomizations.MongodbDatabaseThroughputSettingExtension{})
-	result = append(result, &documentdbcustomizations.SqlDatabaseContainerExtension{})
-	result = append(result, &documentdbcustomizations.SqlDatabaseContainerStoredProcedureExtension{})
-	result = append(result, &documentdbcustomizations.SqlDatabaseContainerThroughputSettingExtension{})
-	result = append(result, &documentdbcustomizations.SqlDatabaseContainerTriggerExtension{})
-	result = append(result, &documentdbcustomizations.SqlDatabaseContainerUserDefinedFunctionExtension{})
-	result = append(result, &documentdbcustomizations.SqlDatabaseExtension{})
-	result = append(result, &documentdbcustomizations.SqlDatabaseThroughputSettingExtension{})
 	result = append(result, &eventgridcustomizations.DomainExtension{})
 	result = append(result, &eventgridcustomizations.DomainsTopicExtension{})
 	result = append(result, &eventgridcustomizations.EventSubscriptionExtension{})
@@ -973,28 +736,4 @@ func indexComputeVirtualMachineScaleSetAdminPassword(rawObj client.Object) []str
 		return nil
 	}
 	return []string{obj.Spec.VirtualMachineProfile.OsProfile.AdminPassword.Name}
-}
-
-// indexDbformysqlFlexibleServerAdministratorLoginPassword an index function for dbformysqlv1beta20210501storage.FlexibleServer .spec.administratorLoginPassword
-func indexDbformysqlFlexibleServerAdministratorLoginPassword(rawObj client.Object) []string {
-	obj, ok := rawObj.(*dbformysqlv1beta20210501storage.FlexibleServer)
-	if !ok {
-		return nil
-	}
-	if obj.Spec.AdministratorLoginPassword == nil {
-		return nil
-	}
-	return []string{obj.Spec.AdministratorLoginPassword.Name}
-}
-
-// indexDbforpostgresqlFlexibleServerAdministratorLoginPassword an index function for dbforpostgresqlv1beta20210601storage.FlexibleServer .spec.administratorLoginPassword
-func indexDbforpostgresqlFlexibleServerAdministratorLoginPassword(rawObj client.Object) []string {
-	obj, ok := rawObj.(*dbforpostgresqlv1beta20210601storage.FlexibleServer)
-	if !ok {
-		return nil
-	}
-	if obj.Spec.AdministratorLoginPassword == nil {
-		return nil
-	}
-	return []string{obj.Spec.AdministratorLoginPassword.Name}
 }

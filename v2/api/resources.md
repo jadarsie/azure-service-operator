@@ -64,59 +64,6 @@ These are the resources with Azure Service Operator support committed to our **m
 | ManagedClustersAgentPool | 2021-05-01  | v1beta20210501      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/containerservice/v1beta20210501_managedclustersagentpool.yaml)      |
 | ManagedClustersAgentPool | 2021-05-01  | v1alpha1api20210501 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/containerservice/v1alpha1api20210501_managedclustersagentpool.yaml) |
 
-## Dbformysql
-
-| Resource                    | ARM Version | CRD Version         | Sample                                                                                                                                              |
-|-----------------------------|-------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| FlexibleServer              | 2021-05-01  | v1beta20210501      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbformysql/v1beta20210501_flexibleserver.yaml)                   |
-| FlexibleServer              | 2021-05-01  | v1alpha1api20210501 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbformysql/v1alpha1api20210501_flexibleserver.yaml)              |
-| FlexibleServersDatabase     | 2021-05-01  | v1beta20210501      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbformysql/v1beta20210501_flexibleserversdatabase.yaml)          |
-| FlexibleServersDatabase     | 2021-05-01  | v1alpha1api20210501 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbformysql/v1alpha1api20210501_flexibleserversdatabase.yaml)     |
-| FlexibleServersFirewallRule | 2021-05-01  | v1beta20210501      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbformysql/v1beta20210501_flexibleserversfirewallrule.yaml)      |
-| FlexibleServersFirewallRule | 2021-05-01  | v1alpha1api20210501 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbformysql/v1alpha1api20210501_flexibleserversfirewallrule.yaml) |
-
-## Dbforpostgresql
-
-| Resource                     | ARM Version | CRD Version         | Sample                                                                                                                                                    |
-|------------------------------|-------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| FlexibleServer               | 2021-06-01  | v1beta20210601      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbforpostgresql/v1beta20210601_flexibleserver.yaml)                    |
-| FlexibleServer               | 2021-06-01  | v1alpha1api20210601 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbforpostgresql/v1alpha1api20210601_flexibleserver.yaml)               |
-| FlexibleServersConfiguration | 2021-06-01  | v1beta20210601      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbforpostgresql/v1beta20210601_flexibleserversconfiguration.yaml)      |
-| FlexibleServersConfiguration | 2021-06-01  | v1alpha1api20210601 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbforpostgresql/v1alpha1api20210601_flexibleserversconfiguration.yaml) |
-| FlexibleServersDatabase      | 2021-06-01  | v1beta20210601      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbforpostgresql/v1beta20210601_flexibleserversdatabase.yaml)           |
-| FlexibleServersDatabase      | 2021-06-01  | v1alpha1api20210601 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbforpostgresql/v1alpha1api20210601_flexibleserversdatabase.yaml)      |
-| FlexibleServersFirewallRule  | 2021-06-01  | v1beta20210601      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbforpostgresql/v1beta20210601_flexibleserversfirewallrule.yaml)       |
-| FlexibleServersFirewallRule  | 2021-06-01  | v1alpha1api20210601 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/dbforpostgresql/v1alpha1api20210601_flexibleserversfirewallrule.yaml)  |
-
-## Documentdb
-
-| Resource                                   | ARM Version | CRD Version         | Sample                                                                                                                                                             |
-|--------------------------------------------|-------------|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| DatabaseAccount                            | 2021-05-15  | v1beta20210515      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1beta20210515_databaseaccount.yaml)                                 |
-| DatabaseAccount                            | 2021-05-15  | v1alpha1api20210515 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1alpha1api20210515_databaseaccount.yaml)                            |
-| MongodbDatabase                            | 2021-05-15  | v1beta20210515      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1beta20210515_mongodbdatabase.yaml)                                 |
-| MongodbDatabase                            | 2021-05-15  | v1alpha1api20210515 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1alpha1api20210515_mongodbdatabase.yaml)                            |
-| MongodbDatabaseCollection                  | 2021-05-15  | v1beta20210515      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1beta20210515_mongodbdatabasecollection.yaml)                       |
-| MongodbDatabaseCollection                  | 2021-05-15  | v1alpha1api20210515 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1alpha1api20210515_mongodbdatabasecollection.yaml)                  |
-| MongodbDatabaseCollectionThroughputSetting | 2021-05-15  | v1beta20210515      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1beta20210515_mongodbdatabasecollectionthroughputsetting.yaml)      |
-| MongodbDatabaseCollectionThroughputSetting | 2021-05-15  | v1alpha1api20210515 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1alpha1api20210515_mongodbdatabasecollectionthroughputsetting.yaml) |
-| MongodbDatabaseThroughputSetting           | 2021-05-15  | v1beta20210515      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1beta20210515_mongodbdatabasethroughputsetting.yaml)                |
-| MongodbDatabaseThroughputSetting           | 2021-05-15  | v1alpha1api20210515 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1alpha1api20210515_mongodbdatabasethroughputsetting.yaml)           |
-| SqlDatabase                                | 2021-05-15  | v1beta20210515      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1beta20210515_sqldatabase.yaml)                                     |
-| SqlDatabase                                | 2021-05-15  | v1alpha1api20210515 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1alpha1api20210515_sqldatabase.yaml)                                |
-| SqlDatabaseContainer                       | 2021-05-15  | v1beta20210515      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1beta20210515_sqldatabasecontainer.yaml)                            |
-| SqlDatabaseContainer                       | 2021-05-15  | v1alpha1api20210515 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1alpha1api20210515_sqldatabasecontainer.yaml)                       |
-| SqlDatabaseContainerStoredProcedure        | 2021-05-15  | v1beta20210515      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1beta20210515_sqldatabasecontainerstoredprocedure.yaml)             |
-| SqlDatabaseContainerStoredProcedure        | 2021-05-15  | v1alpha1api20210515 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1alpha1api20210515_sqldatabasecontainerstoredprocedure.yaml)        |
-| SqlDatabaseContainerThroughputSetting      | 2021-05-15  | v1beta20210515      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1beta20210515_sqldatabasecontainerthroughputsetting.yaml)           |
-| SqlDatabaseContainerThroughputSetting      | 2021-05-15  | v1alpha1api20210515 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1alpha1api20210515_sqldatabasecontainerthroughputsetting.yaml)      |
-| SqlDatabaseContainerTrigger                | 2021-05-15  | v1beta20210515      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1beta20210515_sqldatabasecontainertrigger.yaml)                     |
-| SqlDatabaseContainerTrigger                | 2021-05-15  | v1alpha1api20210515 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1alpha1api20210515_sqldatabasecontainertrigger.yaml)                |
-| SqlDatabaseContainerUserDefinedFunction    | 2021-05-15  | v1beta20210515      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1beta20210515_sqldatabasecontaineruserdefinedfunction.yaml)         |
-| SqlDatabaseContainerUserDefinedFunction    | 2021-05-15  | v1alpha1api20210515 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1alpha1api20210515_sqldatabasecontaineruserdefinedfunction.yaml)    |
-| SqlDatabaseThroughputSetting               | 2021-05-15  | v1beta20210515      | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1beta20210515_sqldatabasethroughputsetting.yaml)                    |
-| SqlDatabaseThroughputSetting               | 2021-05-15  | v1alpha1api20210515 | [View](https://github.com/Azure/azure-service-operator/tree/main/v2/config/samples/documentdb/v1alpha1api20210515_sqldatabasethroughputsetting.yaml)               |
-
 ## Eventgrid
 
 | Resource          | ARM Version | CRD Version         | Sample                                                                                                                                   |
