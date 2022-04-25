@@ -1,4 +1,4 @@
-PUBLIC_REPO=mcr.microsoft.com/k8s/azureserviceoperator
+PUBLIC_REPO=jadarsie.azurecr.io/azureserviceoperator
 PLACEHOLDER_IMAGE=controller:latest
 
 # Image URL to use all building/pushing image targets

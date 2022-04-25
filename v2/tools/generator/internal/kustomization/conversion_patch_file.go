@@ -7,6 +7,7 @@ package kustomization
 
 import (
 	"io/ioutil"
+	"strings"
 
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v3"
@@ -51,6 +52,9 @@ func NewConversionPatchFile(resourceName string) *ConversionPatchFile {
 			Name: resourceName,
 			Annotations: map[string]string{
 				certManagerInjectKey: certManagerInjectValue,
+				providerNameKey:      providerNameValue,
+				apiVersionKey:        apiVersionValue,
+				resourceTypeKey:      typeKey(resourceName),
 			},
 		},
 		Spec: conversionPatchSpec{
@@ -89,6 +93,13 @@ func (p *ConversionPatchFile) Save(destination string) error {
 	return nil
 }
 
+// typeKey computes the name of the projected resource type key out of the CRD name
+// by removing the "azure.com" suffix and replacing "."s for "-"s
+func typeKey(resourceName string) string {
+	slice := strings.Split(resourceName, ".")
+	return strings.Join(slice[:len(slice)-2], "-")
+}
+
 const (
 	// This annotation instructs the cert-manager webhooks to inject
 	// the CA bundle from a certificate into the client config of this
@@ -98,6 +109,12 @@ const (
 	// The values here will be substituted by kusomization vars when
 	// this kustomize directory is built.
 	certManagerInjectValue = "$(CERTIFICATE_NAMESPACE)/$(CERTIFICATE_NAME)"
+
+	providerNameKey   = "management.azure.com/providerName"
+	providerNameValue = "Microsoft.ASOExtension"
+	apiVersionKey     = "management.azure.com/api-version"
+	apiVersionValue   = "2020-01-01-preview"
+	resourceTypeKey   = "management.azure.com/resourceType"
 )
 
 type conversionPatchMetadata struct {

@@ -25,7 +25,7 @@ vars:
   VERSION_FLAGS: -ldflags "-X {{.PACKAGE}}/internal/version.BuildVersion={{.VERSION}}"
 
   CONTROLLER_DOCKER_IMAGE: azureserviceoperator:{{.VERSION}}
-  PUBLIC_REGISTRY: mcr.microsoft.com/k8s/
+  PUBLIC_REGISTRY: jadarsie.azurecr.io/
   LOCAL_REGISTRY_CONTROLLER_DOCKER_IMAGE: localhost:5000/azureserviceoperator:latest
 
   CROSSPLANE_APP: crossplane-gen
@@ -547,9 +547,9 @@ tasks:
       # We need the below to wait until cert-manager is up, otherwise the subsequent installation of webhooks fails. See https://cert-manager.io/next-docs/installation/verify/
       - "cmctl check api --wait=2m"
       # Install cluster yaml - we need to switch the image to the local one.
-      - "cat v2/bin/multitenant-cluster_{{.VERSION}}.yaml | sed -e 's|image: mcr.microsoft.com/k8s/azureserviceoperator:.*|image: localhost:5000/azureserviceoperator:latest|' | kubectl apply --server-side=true -f -"
+      - "cat v2/bin/multitenant-cluster_{{.VERSION}}.yaml | sed -e 's|image: jadarsie.azurecr.io/azureserviceoperator:.*|image: localhost:5000/azureserviceoperator:latest|' | kubectl apply --server-side=true -f -"
       # Install tenant yaml - with same image switch
-      - "cat v2/bin/multitenant-tenant_{{.VERSION}}.yaml | sed -e 's|image: mcr.microsoft.com/k8s/azureserviceoperator:.*|image: localhost:5000/azureserviceoperator:latest|' | kubectl apply --server-side=true -f -"
+      - "cat v2/bin/multitenant-tenant_{{.VERSION}}.yaml | sed -e 's|image: jadarsie.azurecr.io/azureserviceoperator:.*|image: localhost:5000/azureserviceoperator:latest|' | kubectl apply --server-side=true -f -"
       # Make sp secret for tenant watching some target namespaces.
       - "{{.SCRIPTS_ROOT}}/deploy_multitenant_testing_secret.sh"
       # Create the namespaces that the tenant is watching.

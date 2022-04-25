@@ -5,10 +5,10 @@ entries:
     created: "2022-03-03T16:41:18.238942+13:00"
     description: Deploy components and dependencies of azure-service-operator
     digest: 644b1f9e38f7cd868963e52dc449cbb16231c10b3ee0ba303e864f1a392444fb
-    home: https://github.com/Azure/azure-service-operator/v2
+    home: https://github.com/jadarsie/azure-service-operator/v2
     name: azure-service-operator
     sources:
-    - https://github.com/Azure/azure-service-operator/v2
+    - https://github.com/jadarsie/azure-service-operator/v2
     urls:
     - azure-service-operator-v2.0.0-alpha.6.tgz
     version: v2.0.0-alpha.6

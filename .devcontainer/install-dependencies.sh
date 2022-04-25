@@ -188,7 +188,7 @@ fi
 write-verbose "Checking for $TOOL_DEST/helm"
 if should-install "$TOOL_DEST/helm"; then 
     write-info "Installing helm…"
-    curl -sL "https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz" | tar -C "$TOOL_DEST" --strip-components=1 -xz linux-amd64/helm
+    curl -sL "https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz" | tar -C "$TOOL_DEST" --strip-components=1 -xz linux-amd64/helm
 fi
 
 # Install yq
