@@ -5,7 +5,7 @@
     "description": "The Microsoft.ASOExtension Rest API spec.",
     "version": "2020-01-01-preview",
     "x-ms-code-generation-settings": {
-      "name": "ArcOnAzureClient"
+      "name": "ArcTargetAzureClient"
     }
   },
   "host": "management.azure.com",

@@ -1,19 +1,91 @@
 {
     "mappings": [
         {
-            "ApiVersion": "<Azure API Version - e.g. 2020-01-01-preview>",
-            "ResourceType": "<Azure Resource Type - e.g. towers>",
-            "ProviderName": "<Azure Provider Name - e.g. Microsoft.Contoso>",
+            "ApiVersion": "2020-01-01-preview",
+            "ResourceType": "networkinterfaces-network",
+            "ProviderName": "Microsoft.ArcTargetAzure",
             "ResourceMapping": {
-                "Version": "<Kubernetes CRD Version - e.g. v1>",
-                "Group": "<Kubernetes CRD API Group - e.g. stable.example.com>",
-                "Kind": "<Kubernetes CRD Kind - e.g. CronTab>",
-                "Name": "<Kubernetes CRD API Plural Name - e.g. crontabs>",
-                "IsAsync": "<Kubernetes CRD Supports ARM Async - e.g. true|false (Default is false)>",
-                "Liquid": {
-                    "AzureToKubernetes": "<File in Helm Package - e.g. azure/virtualMachines/myAzureTransform.json>",
-                    "KubernetesToAzure": "<File in Helm Package - e.g. azure/virtualMachines/myKubernetesTransform.json>"
-                }
+                "Version": "v1beta20201101",
+                "Group": "network.azure.com",
+                "Kind": "NetworkInterface",
+                "Name": "networkinterfaces"
+            }
+        },
+        {
+            "ApiVersion": "2020-01-01-preview",
+            "ResourceType": "networksecuritygroups-network",
+            "ProviderName": "Microsoft.ArcTargetAzure",
+            "ResourceMapping": {
+                "Version": "v1beta20201101",
+                "Group": "network.azure.com",
+                "Kind": "NetworkSecurityGroup",
+                "Name": "networksecuritygroups"
+            }
+        },
+        {
+            "ApiVersion": "2020-01-01-preview",
+            "ResourceType": "networksecuritygroupssecurityrules-network",
+            "ProviderName": "Microsoft.ArcTargetAzure",
+            "ResourceMapping": {
+                "Version": "v1beta20201101",
+                "Group": "network.azure.com",
+                "Kind": "NetworkSecurityGroupsSecurityRule",
+                "Name": "networksecuritygroupssecurityrules"
+            }
+        },
+        {
+            "ApiVersion": "2020-01-01-preview",
+            "ResourceType": "publicipaddresses-network",
+            "ProviderName": "Microsoft.ArcTargetAzure",
+            "ResourceMapping": {
+                "Version": "v1beta20201101",
+                "Group": "network.azure.com",
+                "Kind": "PublicIPAddress",
+                "Name": "publicipaddresses"
+            }
+        },
+        {
+            "ApiVersion": "2020-01-01-preview",
+            "ResourceType": "resourcegroups-resources",
+            "ProviderName": "Microsoft.ArcTargetAzure",
+            "ResourceMapping": {
+                "Version": "v1beta20200601",
+                "Group": "resources.azure.com",
+                "Kind": "ResourceGroup",
+                "Name": "resourcegroups"
+            }
+        },
+        {
+            "ApiVersion": "2020-01-01-preview",
+            "ResourceType": "virtualmachines-compute",
+            "ProviderName": "Microsoft.ArcTargetAzure",
+            "ResourceMapping": {
+                "Version": "v1beta20201201",
+                "Group": "compute.azure.com",
+                "Kind": "VirtualMachine",
+                "Name": "virtualmachines"
+            }
+        },
+        {
+            "ApiVersion": "2020-01-01-preview",
+            "ResourceType": "virtualnetworks-network",
+            "ProviderName": "Microsoft.ArcTargetAzure",
+            "ResourceMapping": {
+                "Version": "v1beta20201101",
+                "Group": "network.azure.com",
+                "Kind": "VirtualNetwork",
+                "Name": "virtualnetworks"
+            }
+        },
+        {
+            "ApiVersion": "2020-01-01-preview",
+            "ResourceType": "virtualnetworkssubnets-network",
+            "ProviderName": "Microsoft.ArcTargetAzure",
+            "ResourceMapping": {
+                "Version": "v1beta20201101",
+                "Group": "network.azure.com",
+                "Kind": "VirtualNetworksSubnet",
+                "Name": "virtualnetworkssubnets"
             }
         }
     ]

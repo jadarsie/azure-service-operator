@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "ArcOnAzure",
-    "description": "The Microsoft.ArcOnAzure Rest API spec.",
+    "title": "ArcTargetAzure",
+    "description": "The Microsoft.ArcTargetAzure Rest API spec.",
     "version": "2020-01-01-preview",
     "x-ms-code-generation-settings": {
-      "name": "ArcOnAzureClient"
+      "name": "ArcTargetAzureClient"
     }
   },
   "host": "management.azure.com",
@@ -19,7 +19,7 @@
     "application/json"
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ArcOnAzure/networksecuritygroups-network/{networksecuritygroups-networkName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ArcTargetAzure/networksecuritygroups-network/{networksecuritygroups-networkName}": {
       "get": {
         "operationId": "networksecuritygroups-network_Retrieve",
         "parameters": [
@@ -146,7 +146,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ArcOnAzure/networksecuritygroups-network": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ArcTargetAzure/networksecuritygroups-network": {
       "get": {
         "operationId": "networksecuritygroups-network_ListByResourceGroup",
         "parameters": [
@@ -173,7 +173,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.ArcOnAzure/networksecuritygroups-network": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.ArcTargetAzure/networksecuritygroups-network": {
       "get": {
         "operationId": "networksecuritygroups-network_ListBySubscription",
         "parameters": [
@@ -197,7 +197,7 @@
         }
       }
     },
-    "/providers/Microsoft.ArcOnAzure/operations": {
+    "/providers/Microsoft.ArcTargetAzure/operations": {
       "get": {
         "operationId": "Operations_List",
         "parameters": [
