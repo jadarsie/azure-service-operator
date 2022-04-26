@@ -111,7 +111,7 @@ const (
 	certManagerInjectValue = "$(CERTIFICATE_NAMESPACE)/$(CERTIFICATE_NAME)"
 
 	providerNameKey   = "management.azure.com/providerName"
-	providerNameValue = "Microsoft.ArcInAzure"
+	providerNameValue = "Microsoft.ArcTargetAzure"
 	apiVersionKey     = "management.azure.com/api-version"
 	apiVersionValue   = "2020-01-01-preview"
 	resourceTypeKey   = "management.azure.com/resourceType"
