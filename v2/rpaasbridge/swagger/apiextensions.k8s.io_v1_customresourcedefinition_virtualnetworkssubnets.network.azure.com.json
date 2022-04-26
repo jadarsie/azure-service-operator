@@ -1,0 +1,1054 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ASOExtension",
+    "description": "The Microsoft.ASOExtension Rest API spec.",
+    "version": "2020-01-01-preview",
+    "x-ms-code-generation-settings": {
+      "name": "ArcOnAzureClient"
+    }
+  },
+  "host": "management.azure.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ASOExtension/virtualnetworkssubnets-network/{virtualnetworkssubnets-networkName}": {
+      "get": {
+        "operationId": "virtualnetworkssubnets-network_Retrieve",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/virtualnetworkssubnets-networkNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieves the virtualnetworkssubnets-network resource.",
+            "schema": {
+              "$ref": "#/definitions/virtualnetworkssubnets-network"
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "virtualnetworkssubnets-network_CreateOrUpdate",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/virtualnetworkssubnets-networkNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "name": "virtualnetworkssubnets-network",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/virtualnetworkssubnets-network"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updates the virtualnetworkssubnets-network resource.",
+            "schema": {
+              "$ref": "#/definitions/virtualnetworkssubnets-network"
+            }
+          },
+          "201": {
+            "description": "Creates the virtualnetworkssubnets-network resource.",
+            "schema": {
+              "$ref": "#/definitions/virtualnetworkssubnets-network"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "virtualnetworkssubnets-network_Delete",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/virtualnetworkssubnets-networkNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deletes the virtualnetworkssubnets-network resource."
+          }
+        }
+      },
+      "patch": {
+        "operationId": "virtualnetworkssubnets-network_Update",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/virtualnetworkssubnets-networkNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "name": "virtualnetworkssubnets-network",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/virtualnetworkssubnets-networkPatch"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updates the virtualnetworkssubnets-network resource.",
+            "schema": {
+              "$ref": "#/definitions/virtualnetworkssubnets-network"
+            }
+          },
+          "201": {
+            "description": "Updates the virtualnetworkssubnets-network resource.",
+            "schema": {
+              "$ref": "#/definitions/virtualnetworkssubnets-network"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ASOExtension/virtualnetworkssubnets-network": {
+      "get": {
+        "operationId": "virtualnetworkssubnets-network_ListByResourceGroup",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lists all virtualnetworkssubnets-network under the resouce group.",
+            "schema": {
+              "$ref": "#/definitions/virtualnetworkssubnets-networkListResult"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.ASOExtension/virtualnetworkssubnets-network": {
+      "get": {
+        "operationId": "virtualnetworkssubnets-network_ListBySubscription",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lists all virtualnetworkssubnets-network under the subscription.",
+            "schema": {
+              "$ref": "#/definitions/virtualnetworkssubnets-networkListResult"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/providers/Microsoft.ASOExtension/operations": {
+      "get": {
+        "operationId": "Operations_List",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Describe the result of a successful operation.",
+            "schema": {
+              "$ref": "#/definitions/ResourceProviderOperationList"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "virtualnetworkssubnets-networkProperties": {
+      "type": "object",
+      "properties": {
+        "addressPrefix": {
+          "type": "string"
+        },
+        "addressPrefixes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "azureName": {
+          "type": "string",
+          "description": "AzureName: The name of the resource in Azure. This is often the same as the name of the resource in Kubernetes but it doesn't have to be."
+        },
+        "delegations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "serviceName": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "description": "Deprecated version of VirtualNetworksSubnets_Spec_Properties_Delegations. Use v1beta20201101.VirtualNetworksSubnets_Spec_Properties_Delegations instead"
+          }
+        },
+        "ipAllocations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "reference": {
+                "type": "object",
+                "properties": {
+                  "armId": {
+                    "type": "string",
+                    "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                    "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                  },
+                  "group": {
+                    "type": "string",
+                    "description": "Group is the Kubernetes group of the resource."
+                  },
+                  "kind": {
+                    "type": "string",
+                    "description": "Kind is the Kubernetes kind of the resource."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Name is the Kubernetes name of the resource."
+                  }
+                },
+                "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+              }
+            },
+            "required": [
+              "reference"
+            ],
+            "description": "Deprecated version of SubResource. Use v1beta20201101.SubResource instead"
+          }
+        },
+        "natGateway": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "object",
+              "properties": {
+                "armId": {
+                  "type": "string",
+                  "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                  "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                },
+                "group": {
+                  "type": "string",
+                  "description": "Group is the Kubernetes group of the resource."
+                },
+                "kind": {
+                  "type": "string",
+                  "description": "Kind is the Kubernetes kind of the resource."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name is the Kubernetes name of the resource."
+                }
+              },
+              "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+            }
+          },
+          "required": [
+            "reference"
+          ],
+          "description": "Deprecated version of SubResource. Use v1beta20201101.SubResource instead"
+        },
+        "networkSecurityGroup": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "object",
+              "properties": {
+                "armId": {
+                  "type": "string",
+                  "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                  "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                },
+                "group": {
+                  "type": "string",
+                  "description": "Group is the Kubernetes group of the resource."
+                },
+                "kind": {
+                  "type": "string",
+                  "description": "Kind is the Kubernetes kind of the resource."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name is the Kubernetes name of the resource."
+                }
+              },
+              "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+            }
+          },
+          "required": [
+            "reference"
+          ],
+          "description": "Deprecated version of SubResource. Use v1beta20201101.SubResource instead"
+        },
+        "owner": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "This is the name of the Kubernetes resource to reference."
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "description": "Owner: The owner of the resource. The owner controls where the resource goes when it is deployed. The owner also controls the resources lifecycle. When the owner is deleted the resource will also be deleted. Owner is expected to be a reference to a network.azure.com/VirtualNetwork resource"
+        },
+        "privateEndpointNetworkPolicies": {
+          "type": "string"
+        },
+        "privateLinkServiceNetworkPolicies": {
+          "type": "string"
+        },
+        "routeTable": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "object",
+              "properties": {
+                "armId": {
+                  "type": "string",
+                  "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                  "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                },
+                "group": {
+                  "type": "string",
+                  "description": "Group is the Kubernetes group of the resource."
+                },
+                "kind": {
+                  "type": "string",
+                  "description": "Kind is the Kubernetes kind of the resource."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name is the Kubernetes name of the resource."
+                }
+              },
+              "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+            }
+          },
+          "required": [
+            "reference"
+          ],
+          "description": "Deprecated version of SubResource. Use v1beta20201101.SubResource instead"
+        },
+        "serviceEndpointPolicies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "reference": {
+                "type": "object",
+                "properties": {
+                  "armId": {
+                    "type": "string",
+                    "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                    "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                  },
+                  "group": {
+                    "type": "string",
+                    "description": "Group is the Kubernetes group of the resource."
+                  },
+                  "kind": {
+                    "type": "string",
+                    "description": "Kind is the Kubernetes kind of the resource."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Name is the Kubernetes name of the resource."
+                  }
+                },
+                "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+              }
+            },
+            "required": [
+              "reference"
+            ],
+            "description": "Deprecated version of SubResource. Use v1beta20201101.SubResource instead"
+          }
+        },
+        "serviceEndpoints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "locations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "service": {
+                "type": "string"
+              }
+            },
+            "description": "Deprecated version of ServiceEndpointPropertiesFormat. Use v1beta20201101.ServiceEndpointPropertiesFormat instead"
+          }
+        },
+        "provisioningState": {
+          "type": "string"
+        },
+        "status": {
+          "type": "object",
+          "properties": {
+            "addressPrefix": {
+              "type": "string"
+            },
+            "addressPrefixes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "applicationGatewayIpConfigurations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "etag": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "provisioningState": {
+                    "type": "string",
+                    "description": "Deprecated version of ProvisioningState_Status. Use v1beta20201101.ProvisioningState_Status instead"
+                  },
+                  "subnet": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      }
+                    },
+                    "description": "Deprecated version of SubResource_Status. Use v1beta20201101.SubResource_Status instead"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "description": "Deprecated version of ApplicationGatewayIPConfiguration_Status. Use v1beta20201101.ApplicationGatewayIPConfiguration_Status instead"
+              }
+            },
+            "conditions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "lastTransitionTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "LastTransitionTime is the last time the condition transitioned from one status to another."
+                  },
+                  "message": {
+                    "type": "string",
+                    "description": "Message is a human readable message indicating details about the transition. This field may be empty."
+                  },
+                  "observedGeneration": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "ObservedGeneration is the .metadata.generation that the condition was set based upon. For instance, if .metadata.generation is currently 12, but the .status.condition[x].observedGeneration is 9, the condition is out of date with respect to the current state of the instance."
+                  },
+                  "reason": {
+                    "type": "string",
+                    "description": "Reason for the condition's last transition. Reasons are upper CamelCase (PascalCase) with no spaces. A reason is always provided, this field will not be empty."
+                  },
+                  "severity": {
+                    "type": "string",
+                    "description": "Severity with which to treat failures of this type of condition. For conditions which have positive polarity (Status == True is their normal/healthy state), this will be omitted when Status == True For conditions which have negative polarity (Status == False is their normal/healthy state), this will be omitted when Status == False. This is omitted in all cases when Status == Unknown"
+                  },
+                  "status": {
+                    "type": "string",
+                    "description": "Status of the condition, one of True, False, or Unknown."
+                  },
+                  "type": {
+                    "type": "string",
+                    "description": "Type of condition."
+                  }
+                },
+                "required": [
+                  "lastTransitionTime",
+                  "reason",
+                  "status",
+                  "type"
+                ],
+                "description": "Condition defines an extension to status (an observation) of a resource"
+              },
+              "description": "Conditions: The observed state of the resource"
+            },
+            "delegations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "actions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "etag": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "provisioningState": {
+                    "type": "string",
+                    "description": "Deprecated version of ProvisioningState_Status. Use v1beta20201101.ProvisioningState_Status instead"
+                  },
+                  "serviceName": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "description": "Deprecated version of Delegation_Status. Use v1beta20201101.Delegation_Status instead"
+              }
+            },
+            "etag": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "ipAllocations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  }
+                },
+                "description": "Deprecated version of SubResource_Status. Use v1beta20201101.SubResource_Status instead"
+              }
+            },
+            "ipConfigurationProfiles": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "etag": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "provisioningState": {
+                    "type": "string",
+                    "description": "Deprecated version of ProvisioningState_Status. Use v1beta20201101.ProvisioningState_Status instead"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "description": "Deprecated version of IPConfigurationProfile_Status_VirtualNetworksSubnet_SubResourceEmbedded. Use v1beta20201101.IPConfigurationProfile_Status_VirtualNetworksSubnet_SubResourceEmbedded instead"
+              }
+            },
+            "ipConfigurations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "etag": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "privateIPAddress": {
+                    "type": "string"
+                  },
+                  "privateIPAllocationMethod": {
+                    "type": "string",
+                    "description": "Deprecated version of IPAllocationMethod_Status. Use v1beta20201101.IPAllocationMethod_Status instead"
+                  },
+                  "provisioningState": {
+                    "type": "string",
+                    "description": "Deprecated version of ProvisioningState_Status. Use v1beta20201101.ProvisioningState_Status instead"
+                  },
+                  "publicIPAddress": {
+                    "type": "object",
+                    "properties": {
+                      "extendedLocation": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string",
+                            "description": "Deprecated version of ExtendedLocationType_Status. Use v1beta20201101.ExtendedLocationType_Status instead"
+                          }
+                        },
+                        "description": "Deprecated version of ExtendedLocation_Status. Use v1beta20201101.ExtendedLocation_Status instead"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "sku": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Deprecated version of PublicIPAddressSkuStatusName. Use v1beta20201101.PublicIPAddressSkuStatusName instead"
+                          },
+                          "tier": {
+                            "type": "string",
+                            "description": "Deprecated version of PublicIPAddressSkuStatusTier. Use v1beta20201101.PublicIPAddressSkuStatusTier instead"
+                          }
+                        },
+                        "description": "Deprecated version of PublicIPAddressSku_Status. Use v1beta20201101.PublicIPAddressSku_Status instead"
+                      },
+                      "zones": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "description": "Deprecated version of PublicIPAddress_Status_VirtualNetworksSubnet_SubResourceEmbedded. Use v1beta20201101.PublicIPAddress_Status_VirtualNetworksSubnet_SubResourceEmbedded instead"
+                  }
+                },
+                "description": "Deprecated version of IPConfiguration_Status_VirtualNetworksSubnet_SubResourceEmbedded. Use v1beta20201101.IPConfiguration_Status_VirtualNetworksSubnet_SubResourceEmbedded instead"
+              }
+            },
+            "name": {
+              "type": "string"
+            },
+            "natGateway": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              },
+              "description": "Deprecated version of SubResource_Status. Use v1beta20201101.SubResource_Status instead"
+            },
+            "networkSecurityGroup": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              },
+              "description": "Deprecated version of NetworkSecurityGroup_Status_VirtualNetworksSubnet_SubResourceEmbedded. Use v1beta20201101.NetworkSecurityGroup_Status_VirtualNetworksSubnet_SubResourceEmbedded instead"
+            },
+            "privateEndpointNetworkPolicies": {
+              "type": "string",
+              "description": "Deprecated version of SubnetPropertiesFormatStatusPrivateEndpointNetworkPolicies. Use v1beta20201101.SubnetPropertiesFormatStatusPrivateEndpointNetworkPolicies instead"
+            },
+            "privateEndpoints": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "extendedLocation": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "Deprecated version of ExtendedLocationType_Status. Use v1beta20201101.ExtendedLocationType_Status instead"
+                      }
+                    },
+                    "description": "Deprecated version of ExtendedLocation_Status. Use v1beta20201101.ExtendedLocation_Status instead"
+                  },
+                  "id": {
+                    "type": "string"
+                  }
+                },
+                "description": "Deprecated version of PrivateEndpoint_Status_VirtualNetworksSubnet_SubResourceEmbedded. Use v1beta20201101.PrivateEndpoint_Status_VirtualNetworksSubnet_SubResourceEmbedded instead"
+              }
+            },
+            "privateLinkServiceNetworkPolicies": {
+              "type": "string",
+              "description": "Deprecated version of SubnetPropertiesFormatStatusPrivateLinkServiceNetworkPolicies. Use v1beta20201101.SubnetPropertiesFormatStatusPrivateLinkServiceNetworkPolicies instead"
+            },
+            "provisioningState": {
+              "type": "string",
+              "description": "Deprecated version of ProvisioningState_Status. Use v1beta20201101.ProvisioningState_Status instead"
+            },
+            "purpose": {
+              "type": "string"
+            },
+            "resourceNavigationLinks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "etag": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "link": {
+                    "type": "string"
+                  },
+                  "linkedResourceType": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "provisioningState": {
+                    "type": "string",
+                    "description": "Deprecated version of ProvisioningState_Status. Use v1beta20201101.ProvisioningState_Status instead"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "description": "Deprecated version of ResourceNavigationLink_Status. Use v1beta20201101.ResourceNavigationLink_Status instead"
+              }
+            },
+            "routeTable": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              },
+              "description": "Deprecated version of RouteTable_Status_VirtualNetworksSubnet_SubResourceEmbedded. Use v1beta20201101.RouteTable_Status_VirtualNetworksSubnet_SubResourceEmbedded instead"
+            },
+            "serviceAssociationLinks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "allowDelete": {
+                    "type": "boolean"
+                  },
+                  "etag": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "link": {
+                    "type": "string"
+                  },
+                  "linkedResourceType": {
+                    "type": "string"
+                  },
+                  "locations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "provisioningState": {
+                    "type": "string",
+                    "description": "Deprecated version of ProvisioningState_Status. Use v1beta20201101.ProvisioningState_Status instead"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "description": "Deprecated version of ServiceAssociationLink_Status. Use v1beta20201101.ServiceAssociationLink_Status instead"
+              }
+            },
+            "serviceEndpointPolicies": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  }
+                },
+                "description": "Deprecated version of ServiceEndpointPolicy_Status_VirtualNetworksSubnet_SubResourceEmbedded. Use v1beta20201101.ServiceEndpointPolicy_Status_VirtualNetworksSubnet_SubResourceEmbedded instead"
+              }
+            },
+            "serviceEndpoints": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "locations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "provisioningState": {
+                    "type": "string",
+                    "description": "Deprecated version of ProvisioningState_Status. Use v1beta20201101.ProvisioningState_Status instead"
+                  },
+                  "service": {
+                    "type": "string"
+                  }
+                },
+                "description": "Deprecated version of ServiceEndpointPropertiesFormat_Status. Use v1beta20201101.ServiceEndpointPropertiesFormat_Status instead"
+              }
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "description": "Deprecated version of Subnet_Status_VirtualNetworksSubnet_SubResourceEmbedded. Use v1beta20201101.Subnet_Status_VirtualNetworksSubnet_SubResourceEmbedded instead"
+        }
+      },
+      "required": [
+        "addressPrefix",
+        "owner"
+      ]
+    },
+    "virtualnetworkssubnets-network": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/virtualnetworkssubnets-networkProperties"
+        },
+        "id": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Resource Id"
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Resource Name"
+        },
+        "type": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Resource Type"
+        },
+        "location": {
+          "type": "string",
+          "description": "The resource location"
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Resource tags"
+        },
+        "extendedLocation": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "The extended location type."
+            },
+            "name": {
+              "type": "string",
+              "description": "The extended location name."
+            }
+          }
+        }
+      },
+      "required": [
+        "location"
+      ],
+      "description": "The virtualnetworkssubnets-network resource definition."
+    },
+    "virtualnetworkssubnets-networkPatch": {
+      "type": "object",
+      "properties": {
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Resource tags"
+        }
+      },
+      "description": "The virtualnetworkssubnets-network resource patch definition."
+    },
+    "virtualnetworkssubnets-networkListResult": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/virtualnetworkssubnets-network"
+          }
+        },
+        "nextLink": {
+          "type": "string"
+        }
+      }
+    },
+    "ResourceProviderOperationList": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourceProviderOperation"
+          }
+        },
+        "nextLink": {
+          "type": "string"
+        }
+      },
+      "description": "Results of the request to list operations."
+    },
+    "ResourceProviderOperation": {
+      "type": "object",
+      "properties": {
+        "isDataAction": {
+          "type": "string",
+          "description": "Indicates whether the operation applies to data-plane."
+        },
+        "name": {
+          "type": "string",
+          "description": "Operation name, in format of {provider}/{resource}/{operation}"
+        },
+        "display": {
+          "type": "object",
+          "properties": {
+            "provider": {
+              "type": "string",
+              "description": "The resource provider."
+            },
+            "resource": {
+              "type": "string",
+              "description": "Resource on which the operation is performed."
+            },
+            "operation": {
+              "type": "string",
+              "description": "Type of operation: get, read, delete, etc."
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of this operation."
+            }
+          },
+          "description": "Display metadata associated with the operation."
+        }
+      },
+      "description": "Results of the request to list operations."
+    }
+  },
+  "parameters": {
+    "virtualnetworkssubnets-networkNameParameter": {
+      "name": "virtualnetworkssubnets-networkName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 3
+    },
+    "SubscriptionIdParameter": {
+      "name": "subscriptionId",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)"
+    },
+    "ResourceGroupNameParameter": {
+      "name": "resourceGroupName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the resource group."
+    },
+    "ApiVersionParameter": {
+      "name": "api-version",
+      "in": "query",
+      "required": true,
+      "type": "string",
+      "description": "The API version to be used with the HTTP request (e.g. YYYY-MM-DD)."
+    }
+  }
+}

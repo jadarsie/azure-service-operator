@@ -1,0 +1,2994 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ASOExtension",
+    "description": "The Microsoft.ASOExtension Rest API spec.",
+    "version": "2020-01-01-preview",
+    "x-ms-code-generation-settings": {
+      "name": "ArcOnAzureClient"
+    }
+  },
+  "host": "management.azure.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ASOExtension/virtualmachines-compute/{virtualmachines-computeName}": {
+      "get": {
+        "operationId": "virtualmachines-compute_Retrieve",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/virtualmachines-computeNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieves the virtualmachines-compute resource.",
+            "schema": {
+              "$ref": "#/definitions/virtualmachines-compute"
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "virtualmachines-compute_CreateOrUpdate",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/virtualmachines-computeNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "name": "virtualmachines-compute",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/virtualmachines-compute"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updates the virtualmachines-compute resource.",
+            "schema": {
+              "$ref": "#/definitions/virtualmachines-compute"
+            }
+          },
+          "201": {
+            "description": "Creates the virtualmachines-compute resource.",
+            "schema": {
+              "$ref": "#/definitions/virtualmachines-compute"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "virtualmachines-compute_Delete",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/virtualmachines-computeNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deletes the virtualmachines-compute resource."
+          }
+        }
+      },
+      "patch": {
+        "operationId": "virtualmachines-compute_Update",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/virtualmachines-computeNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "name": "virtualmachines-compute",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/virtualmachines-computePatch"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updates the virtualmachines-compute resource.",
+            "schema": {
+              "$ref": "#/definitions/virtualmachines-compute"
+            }
+          },
+          "201": {
+            "description": "Updates the virtualmachines-compute resource.",
+            "schema": {
+              "$ref": "#/definitions/virtualmachines-compute"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ASOExtension/virtualmachines-compute": {
+      "get": {
+        "operationId": "virtualmachines-compute_ListByResourceGroup",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lists all virtualmachines-compute under the resouce group.",
+            "schema": {
+              "$ref": "#/definitions/virtualmachines-computeListResult"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.ASOExtension/virtualmachines-compute": {
+      "get": {
+        "operationId": "virtualmachines-compute_ListBySubscription",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lists all virtualmachines-compute under the subscription.",
+            "schema": {
+              "$ref": "#/definitions/virtualmachines-computeListResult"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/providers/Microsoft.ASOExtension/operations": {
+      "get": {
+        "operationId": "Operations_List",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Describe the result of a successful operation.",
+            "schema": {
+              "$ref": "#/definitions/ResourceProviderOperationList"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "virtualmachines-computeProperties": {
+      "type": "object",
+      "properties": {
+        "additionalCapabilities": {
+          "type": "object",
+          "properties": {
+            "ultraSSDEnabled": {
+              "type": "boolean"
+            }
+          },
+          "description": "Deprecated version of AdditionalCapabilities. Use v1beta20201201.AdditionalCapabilities instead"
+        },
+        "availabilitySet": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "object",
+              "properties": {
+                "armId": {
+                  "type": "string",
+                  "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                  "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                },
+                "group": {
+                  "type": "string",
+                  "description": "Group is the Kubernetes group of the resource."
+                },
+                "kind": {
+                  "type": "string",
+                  "description": "Kind is the Kubernetes kind of the resource."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name is the Kubernetes name of the resource."
+                }
+              },
+              "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+            }
+          },
+          "description": "Deprecated version of SubResource. Use v1beta20201201.SubResource instead"
+        },
+        "azureName": {
+          "type": "string",
+          "description": "AzureName: The name of the resource in Azure. This is often the same as the name of the resource in Kubernetes but it doesn't have to be."
+        },
+        "billingProfile": {
+          "type": "object",
+          "properties": {
+            "maxPrice": {
+              "type": "number"
+            }
+          },
+          "description": "Deprecated version of BillingProfile. Use v1beta20201201.BillingProfile instead"
+        },
+        "diagnosticsProfile": {
+          "type": "object",
+          "properties": {
+            "bootDiagnostics": {
+              "type": "object",
+              "properties": {
+                "enabled": {
+                  "type": "boolean"
+                },
+                "storageUri": {
+                  "type": "string"
+                }
+              },
+              "description": "Deprecated version of BootDiagnostics. Use v1beta20201201.BootDiagnostics instead"
+            }
+          },
+          "description": "Deprecated version of DiagnosticsProfile. Use v1beta20201201.DiagnosticsProfile instead"
+        },
+        "evictionPolicy": {
+          "type": "string",
+          "description": "Deprecated version of VirtualMachinesSpecPropertiesEvictionPolicy. Use v1beta20201201.VirtualMachinesSpecPropertiesEvictionPolicy instead",
+          "enum": [
+            "Deallocate",
+            "Delete"
+          ]
+        },
+        "extendedLocation": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string",
+              "description": "Deprecated version of ExtendedLocationType. Use v1beta20201201.ExtendedLocationType instead",
+              "enum": [
+                "EdgeZone"
+              ]
+            }
+          },
+          "description": "Deprecated version of ExtendedLocation. Use v1beta20201201.ExtendedLocation instead"
+        },
+        "extensionsTimeBudget": {
+          "type": "string"
+        },
+        "hardwareProfile": {
+          "type": "object",
+          "properties": {
+            "vmSize": {
+              "type": "string",
+              "description": "Deprecated version of HardwareProfileVmSize. Use v1beta20201201.HardwareProfileVmSize instead",
+              "enum": [
+                "Basic_A0",
+                "Basic_A1",
+                "Basic_A2",
+                "Basic_A3",
+                "Basic_A4",
+                "Standard_A0",
+                "Standard_A1",
+                "Standard_A10",
+                "Standard_A11",
+                "Standard_A1_v2",
+                "Standard_A2",
+                "Standard_A2m_v2",
+                "Standard_A2_v2",
+                "Standard_A3",
+                "Standard_A4",
+                "Standard_A4m_v2",
+                "Standard_A4_v2",
+                "Standard_A5",
+                "Standard_A6",
+                "Standard_A7",
+                "Standard_A8",
+                "Standard_A8m_v2",
+                "Standard_A8_v2",
+                "Standard_A9",
+                "Standard_B1ms",
+                "Standard_B1s",
+                "Standard_B2ms",
+                "Standard_B2s",
+                "Standard_B4ms",
+                "Standard_B8ms",
+                "Standard_D1",
+                "Standard_D11",
+                "Standard_D11_v2",
+                "Standard_D12",
+                "Standard_D12_v2",
+                "Standard_D13",
+                "Standard_D13_v2",
+                "Standard_D14",
+                "Standard_D14_v2",
+                "Standard_D15_v2",
+                "Standard_D16s_v3",
+                "Standard_D16_v3",
+                "Standard_D1_v2",
+                "Standard_D2",
+                "Standard_D2s_v3",
+                "Standard_D2_v2",
+                "Standard_D2_v3",
+                "Standard_D3",
+                "Standard_D32s_v3",
+                "Standard_D32_v3",
+                "Standard_D3_v2",
+                "Standard_D4",
+                "Standard_D4s_v3",
+                "Standard_D4_v2",
+                "Standard_D4_v3",
+                "Standard_D5_v2",
+                "Standard_D64s_v3",
+                "Standard_D64_v3",
+                "Standard_D8s_v3",
+                "Standard_D8_v3",
+                "Standard_DS1",
+                "Standard_DS11",
+                "Standard_DS11_v2",
+                "Standard_DS12",
+                "Standard_DS12_v2",
+                "Standard_DS13",
+                "Standard_DS13-2_v2",
+                "Standard_DS13-4_v2",
+                "Standard_DS13_v2",
+                "Standard_DS14",
+                "Standard_DS14-4_v2",
+                "Standard_DS14-8_v2",
+                "Standard_DS14_v2",
+                "Standard_DS15_v2",
+                "Standard_DS1_v2",
+                "Standard_DS2",
+                "Standard_DS2_v2",
+                "Standard_DS3",
+                "Standard_DS3_v2",
+                "Standard_DS4",
+                "Standard_DS4_v2",
+                "Standard_DS5_v2",
+                "Standard_E16s_v3",
+                "Standard_E16_v3",
+                "Standard_E2s_v3",
+                "Standard_E2_v3",
+                "Standard_E32-16_v3",
+                "Standard_E32-8s_v3",
+                "Standard_E32s_v3",
+                "Standard_E32_v3",
+                "Standard_E4s_v3",
+                "Standard_E4_v3",
+                "Standard_E64-16s_v3",
+                "Standard_E64-32s_v3",
+                "Standard_E64s_v3",
+                "Standard_E64_v3",
+                "Standard_E8s_v3",
+                "Standard_E8_v3",
+                "Standard_F1",
+                "Standard_F16",
+                "Standard_F16s",
+                "Standard_F16s_v2",
+                "Standard_F1s",
+                "Standard_F2",
+                "Standard_F2s",
+                "Standard_F2s_v2",
+                "Standard_F32s_v2",
+                "Standard_F4",
+                "Standard_F4s",
+                "Standard_F4s_v2",
+                "Standard_F64s_v2",
+                "Standard_F72s_v2",
+                "Standard_F8",
+                "Standard_F8s",
+                "Standard_F8s_v2",
+                "Standard_G1",
+                "Standard_G2",
+                "Standard_G3",
+                "Standard_G4",
+                "Standard_G5",
+                "Standard_GS1",
+                "Standard_GS2",
+                "Standard_GS3",
+                "Standard_GS4",
+                "Standard_GS4-4",
+                "Standard_GS4-8",
+                "Standard_GS5",
+                "Standard_GS5-16",
+                "Standard_GS5-8",
+                "Standard_H16",
+                "Standard_H16m",
+                "Standard_H16mr",
+                "Standard_H16r",
+                "Standard_H8",
+                "Standard_H8m",
+                "Standard_L16s",
+                "Standard_L32s",
+                "Standard_L4s",
+                "Standard_L8s",
+                "Standard_M128-32ms",
+                "Standard_M128-64ms",
+                "Standard_M128ms",
+                "Standard_M128s",
+                "Standard_M64-16ms",
+                "Standard_M64-32ms",
+                "Standard_M64ms",
+                "Standard_M64s",
+                "Standard_NC12",
+                "Standard_NC12s_v2",
+                "Standard_NC12s_v3",
+                "Standard_NC24",
+                "Standard_NC24r",
+                "Standard_NC24rs_v2",
+                "Standard_NC24rs_v3",
+                "Standard_NC24s_v2",
+                "Standard_NC24s_v3",
+                "Standard_NC6",
+                "Standard_NC6s_v2",
+                "Standard_NC6s_v3",
+                "Standard_ND12s",
+                "Standard_ND24rs",
+                "Standard_ND24s",
+                "Standard_ND6s",
+                "Standard_NV12",
+                "Standard_NV24",
+                "Standard_NV6"
+              ]
+            }
+          },
+          "description": "Deprecated version of HardwareProfile. Use v1beta20201201.HardwareProfile instead"
+        },
+        "host": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "object",
+              "properties": {
+                "armId": {
+                  "type": "string",
+                  "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                  "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                },
+                "group": {
+                  "type": "string",
+                  "description": "Group is the Kubernetes group of the resource."
+                },
+                "kind": {
+                  "type": "string",
+                  "description": "Kind is the Kubernetes kind of the resource."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name is the Kubernetes name of the resource."
+                }
+              },
+              "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+            }
+          },
+          "description": "Deprecated version of SubResource. Use v1beta20201201.SubResource instead"
+        },
+        "hostGroup": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "object",
+              "properties": {
+                "armId": {
+                  "type": "string",
+                  "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                  "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                },
+                "group": {
+                  "type": "string",
+                  "description": "Group is the Kubernetes group of the resource."
+                },
+                "kind": {
+                  "type": "string",
+                  "description": "Kind is the Kubernetes kind of the resource."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name is the Kubernetes name of the resource."
+                }
+              },
+              "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+            }
+          },
+          "description": "Deprecated version of SubResource. Use v1beta20201201.SubResource instead"
+        },
+        "identity": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Deprecated version of VirtualMachineIdentityType. Use v1beta20201201.VirtualMachineIdentityType instead",
+              "enum": [
+                "None",
+                "SystemAssigned",
+                "SystemAssigned, UserAssigned",
+                "UserAssigned"
+              ]
+            },
+            "userAssignedIdentities": {
+              "type": "object",
+              "additionalProperties": {
+                "x-kubernetes-preserve-unknown-fields": "true"
+              }
+            }
+          },
+          "description": "Deprecated version of VirtualMachineIdentity. Use v1beta20201201.VirtualMachineIdentity instead"
+        },
+        "licenseType": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "networkProfile": {
+          "type": "object",
+          "properties": {
+            "networkInterfaces": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "primary": {
+                    "type": "boolean"
+                  },
+                  "reference": {
+                    "type": "object",
+                    "properties": {
+                      "armId": {
+                        "type": "string",
+                        "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                        "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                      },
+                      "group": {
+                        "type": "string",
+                        "description": "Group is the Kubernetes group of the resource."
+                      },
+                      "kind": {
+                        "type": "string",
+                        "description": "Kind is the Kubernetes kind of the resource."
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Name is the Kubernetes name of the resource."
+                      }
+                    },
+                    "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+                  }
+                },
+                "description": "Deprecated version of VirtualMachines_Spec_Properties_NetworkProfile_NetworkInterfaces. Use v1beta20201201.VirtualMachines_Spec_Properties_NetworkProfile_NetworkInterfaces instead"
+              }
+            }
+          },
+          "description": "Deprecated version of VirtualMachines_Spec_Properties_NetworkProfile. Use v1beta20201201.VirtualMachines_Spec_Properties_NetworkProfile instead"
+        },
+        "osProfile": {
+          "type": "object",
+          "properties": {
+            "adminPassword": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "description": "Key is the key in the Kubernetes secret being referenced"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "SecretName is the name of the Kubernetes secret being referenced. The secret must be in the same namespace as the resource"
+                }
+              },
+              "required": [
+                "key",
+                "name"
+              ],
+              "description": "SecretReference is a reference to a Kubernetes secret and key in the same namespace as the resource it is on."
+            },
+            "adminUsername": {
+              "type": "string"
+            },
+            "allowExtensionOperations": {
+              "type": "boolean"
+            },
+            "computerName": {
+              "type": "string"
+            },
+            "customData": {
+              "type": "string"
+            },
+            "linuxConfiguration": {
+              "type": "object",
+              "properties": {
+                "disablePasswordAuthentication": {
+                  "type": "boolean"
+                },
+                "patchSettings": {
+                  "type": "object",
+                  "properties": {
+                    "patchMode": {
+                      "type": "string",
+                      "description": "Deprecated version of LinuxPatchSettingsPatchMode. Use v1beta20201201.LinuxPatchSettingsPatchMode instead",
+                      "enum": [
+                        "AutomaticByPlatform",
+                        "ImageDefault"
+                      ]
+                    }
+                  },
+                  "description": "Deprecated version of LinuxPatchSettings. Use v1beta20201201.LinuxPatchSettings instead"
+                },
+                "provisionVMAgent": {
+                  "type": "boolean"
+                },
+                "ssh": {
+                  "type": "object",
+                  "properties": {
+                    "publicKeys": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "keyData": {
+                            "type": "string"
+                          },
+                          "path": {
+                            "type": "string"
+                          }
+                        },
+                        "description": "Deprecated version of SshPublicKey. Use v1beta20201201.SshPublicKey instead"
+                      }
+                    }
+                  },
+                  "description": "Deprecated version of SshConfiguration. Use v1beta20201201.SshConfiguration instead"
+                }
+              },
+              "description": "Deprecated version of LinuxConfiguration. Use v1beta20201201.LinuxConfiguration instead"
+            },
+            "requireGuestProvisionSignal": {
+              "type": "boolean"
+            },
+            "secrets": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "sourceVault": {
+                    "type": "object",
+                    "properties": {
+                      "reference": {
+                        "type": "object",
+                        "properties": {
+                          "armId": {
+                            "type": "string",
+                            "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                            "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                          },
+                          "group": {
+                            "type": "string",
+                            "description": "Group is the Kubernetes group of the resource."
+                          },
+                          "kind": {
+                            "type": "string",
+                            "description": "Kind is the Kubernetes kind of the resource."
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Name is the Kubernetes name of the resource."
+                          }
+                        },
+                        "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+                      }
+                    },
+                    "description": "Deprecated version of SubResource. Use v1beta20201201.SubResource instead"
+                  },
+                  "vaultCertificates": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "certificateStore": {
+                          "type": "string"
+                        },
+                        "certificateUrl": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Deprecated version of VaultCertificate. Use v1beta20201201.VaultCertificate instead"
+                    }
+                  }
+                },
+                "description": "Deprecated version of VaultSecretGroup. Use v1beta20201201.VaultSecretGroup instead"
+              }
+            },
+            "windowsConfiguration": {
+              "type": "object",
+              "properties": {
+                "additionalUnattendContent": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "componentName": {
+                        "type": "string",
+                        "description": "Deprecated version of AdditionalUnattendContentComponentName. Use v1beta20201201.AdditionalUnattendContentComponentName instead",
+                        "enum": [
+                          "Microsoft-Windows-Shell-Setup"
+                        ]
+                      },
+                      "content": {
+                        "type": "string"
+                      },
+                      "passName": {
+                        "type": "string",
+                        "description": "Deprecated version of AdditionalUnattendContentPassName. Use v1beta20201201.AdditionalUnattendContentPassName instead",
+                        "enum": [
+                          "OobeSystem"
+                        ]
+                      },
+                      "settingName": {
+                        "type": "string",
+                        "description": "Deprecated version of AdditionalUnattendContentSettingName. Use v1beta20201201.AdditionalUnattendContentSettingName instead",
+                        "enum": [
+                          "AutoLogon",
+                          "FirstLogonCommands"
+                        ]
+                      }
+                    },
+                    "description": "Deprecated version of AdditionalUnattendContent. Use v1beta20201201.AdditionalUnattendContent instead"
+                  }
+                },
+                "enableAutomaticUpdates": {
+                  "type": "boolean"
+                },
+                "patchSettings": {
+                  "type": "object",
+                  "properties": {
+                    "enableHotpatching": {
+                      "type": "boolean"
+                    },
+                    "patchMode": {
+                      "type": "string",
+                      "description": "Deprecated version of PatchSettingsPatchMode. Use v1beta20201201.PatchSettingsPatchMode instead",
+                      "enum": [
+                        "AutomaticByOS",
+                        "AutomaticByPlatform",
+                        "Manual"
+                      ]
+                    }
+                  },
+                  "description": "Deprecated version of PatchSettings. Use v1beta20201201.PatchSettings instead"
+                },
+                "provisionVMAgent": {
+                  "type": "boolean"
+                },
+                "timeZone": {
+                  "type": "string"
+                },
+                "winRM": {
+                  "type": "object",
+                  "properties": {
+                    "listeners": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "certificateUrl": {
+                            "type": "string"
+                          },
+                          "protocol": {
+                            "type": "string",
+                            "description": "Deprecated version of WinRMListenerProtocol. Use v1beta20201201.WinRMListenerProtocol instead",
+                            "enum": [
+                              "Http",
+                              "Https"
+                            ]
+                          }
+                        },
+                        "description": "Deprecated version of WinRMListener. Use v1beta20201201.WinRMListener instead"
+                      }
+                    }
+                  },
+                  "description": "Deprecated version of WinRMConfiguration. Use v1beta20201201.WinRMConfiguration instead"
+                }
+              },
+              "description": "Deprecated version of WindowsConfiguration. Use v1beta20201201.WindowsConfiguration instead"
+            }
+          },
+          "description": "Deprecated version of OSProfile. Use v1beta20201201.OSProfile instead"
+        },
+        "owner": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "This is the name of the Kubernetes resource to reference."
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "description": "Owner: The owner of the resource. The owner controls where the resource goes when it is deployed. The owner also controls the resources lifecycle. When the owner is deleted the resource will also be deleted. Owner is expected to be a reference to a resources.azure.com/ResourceGroup resource"
+        },
+        "plan": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "product": {
+              "type": "string"
+            },
+            "promotionCode": {
+              "type": "string"
+            },
+            "publisher": {
+              "type": "string"
+            }
+          },
+          "description": "Deprecated version of Plan. Use v1beta20201201.Plan instead"
+        },
+        "platformFaultDomain": {
+          "type": "integer"
+        },
+        "priority": {
+          "type": "string",
+          "description": "Deprecated version of VirtualMachinesSpecPropertiesPriority. Use v1beta20201201.VirtualMachinesSpecPropertiesPriority instead",
+          "enum": [
+            "Low",
+            "Regular",
+            "Spot"
+          ]
+        },
+        "proximityPlacementGroup": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "object",
+              "properties": {
+                "armId": {
+                  "type": "string",
+                  "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                  "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                },
+                "group": {
+                  "type": "string",
+                  "description": "Group is the Kubernetes group of the resource."
+                },
+                "kind": {
+                  "type": "string",
+                  "description": "Kind is the Kubernetes kind of the resource."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name is the Kubernetes name of the resource."
+                }
+              },
+              "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+            }
+          },
+          "description": "Deprecated version of SubResource. Use v1beta20201201.SubResource instead"
+        },
+        "securityProfile": {
+          "type": "object",
+          "properties": {
+            "encryptionAtHost": {
+              "type": "boolean"
+            },
+            "securityType": {
+              "type": "string",
+              "description": "Deprecated version of SecurityProfileSecurityType. Use v1beta20201201.SecurityProfileSecurityType instead",
+              "enum": [
+                "TrustedLaunch"
+              ]
+            },
+            "uefiSettings": {
+              "type": "object",
+              "properties": {
+                "secureBootEnabled": {
+                  "type": "boolean"
+                },
+                "vTpmEnabled": {
+                  "type": "boolean"
+                }
+              },
+              "description": "Deprecated version of UefiSettings. Use v1beta20201201.UefiSettings instead"
+            }
+          },
+          "description": "Deprecated version of SecurityProfile. Use v1beta20201201.SecurityProfile instead"
+        },
+        "storageProfile": {
+          "type": "object",
+          "properties": {
+            "dataDisks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "caching": {
+                    "type": "string",
+                    "description": "Deprecated version of DataDiskCaching. Use v1beta20201201.DataDiskCaching instead",
+                    "enum": [
+                      "None",
+                      "ReadOnly",
+                      "ReadWrite"
+                    ]
+                  },
+                  "createOption": {
+                    "type": "string",
+                    "description": "Deprecated version of DataDiskCreateOption. Use v1beta20201201.DataDiskCreateOption instead",
+                    "enum": [
+                      "Attach",
+                      "Empty",
+                      "FromImage"
+                    ]
+                  },
+                  "detachOption": {
+                    "type": "string",
+                    "description": "Deprecated version of DataDiskDetachOption. Use v1beta20201201.DataDiskDetachOption instead",
+                    "enum": [
+                      "ForceDetach"
+                    ]
+                  },
+                  "diskSizeGB": {
+                    "type": "integer"
+                  },
+                  "image": {
+                    "type": "object",
+                    "properties": {
+                      "uri": {
+                        "type": "string"
+                      }
+                    },
+                    "description": "Deprecated version of VirtualHardDisk. Use v1beta20201201.VirtualHardDisk instead"
+                  },
+                  "lun": {
+                    "type": "integer"
+                  },
+                  "managedDisk": {
+                    "type": "object",
+                    "properties": {
+                      "diskEncryptionSet": {
+                        "type": "object",
+                        "properties": {
+                          "reference": {
+                            "type": "object",
+                            "properties": {
+                              "armId": {
+                                "type": "string",
+                                "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                                "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                              },
+                              "group": {
+                                "type": "string",
+                                "description": "Group is the Kubernetes group of the resource."
+                              },
+                              "kind": {
+                                "type": "string",
+                                "description": "Kind is the Kubernetes kind of the resource."
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "Name is the Kubernetes name of the resource."
+                              }
+                            },
+                            "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+                          }
+                        },
+                        "description": "Deprecated version of DiskEncryptionSetParameters. Use v1beta20201201.DiskEncryptionSetParameters instead"
+                      },
+                      "reference": {
+                        "type": "object",
+                        "properties": {
+                          "armId": {
+                            "type": "string",
+                            "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                            "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                          },
+                          "group": {
+                            "type": "string",
+                            "description": "Group is the Kubernetes group of the resource."
+                          },
+                          "kind": {
+                            "type": "string",
+                            "description": "Kind is the Kubernetes kind of the resource."
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Name is the Kubernetes name of the resource."
+                          }
+                        },
+                        "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+                      },
+                      "storageAccountType": {
+                        "type": "string",
+                        "description": "Deprecated version of ManagedDiskParametersStorageAccountType. Use v1beta20201201.ManagedDiskParametersStorageAccountType instead",
+                        "enum": [
+                          "Premium_LRS",
+                          "Premium_ZRS",
+                          "Standard_LRS",
+                          "StandardSSD_LRS",
+                          "StandardSSD_ZRS",
+                          "UltraSSD_LRS"
+                        ]
+                      }
+                    },
+                    "description": "Deprecated version of ManagedDiskParameters. Use v1beta20201201.ManagedDiskParameters instead"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "toBeDetached": {
+                    "type": "boolean"
+                  },
+                  "vhd": {
+                    "type": "object",
+                    "properties": {
+                      "uri": {
+                        "type": "string"
+                      }
+                    },
+                    "description": "Deprecated version of VirtualHardDisk. Use v1beta20201201.VirtualHardDisk instead"
+                  },
+                  "writeAcceleratorEnabled": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "createOption",
+                  "lun"
+                ],
+                "description": "Deprecated version of DataDisk. Use v1beta20201201.DataDisk instead"
+              }
+            },
+            "imageReference": {
+              "type": "object",
+              "properties": {
+                "offer": {
+                  "type": "string"
+                },
+                "publisher": {
+                  "type": "string"
+                },
+                "reference": {
+                  "type": "object",
+                  "properties": {
+                    "armId": {
+                      "type": "string",
+                      "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                      "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                    },
+                    "group": {
+                      "type": "string",
+                      "description": "Group is the Kubernetes group of the resource."
+                    },
+                    "kind": {
+                      "type": "string",
+                      "description": "Kind is the Kubernetes kind of the resource."
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Name is the Kubernetes name of the resource."
+                    }
+                  },
+                  "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+                },
+                "sku": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                }
+              },
+              "description": "Deprecated version of ImageReference. Use v1beta20201201.ImageReference instead"
+            },
+            "osDisk": {
+              "type": "object",
+              "properties": {
+                "caching": {
+                  "type": "string",
+                  "description": "Deprecated version of OSDiskCaching. Use v1beta20201201.OSDiskCaching instead",
+                  "enum": [
+                    "None",
+                    "ReadOnly",
+                    "ReadWrite"
+                  ]
+                },
+                "createOption": {
+                  "type": "string",
+                  "description": "Deprecated version of OSDiskCreateOption. Use v1beta20201201.OSDiskCreateOption instead",
+                  "enum": [
+                    "Attach",
+                    "Empty",
+                    "FromImage"
+                  ]
+                },
+                "diffDiskSettings": {
+                  "type": "object",
+                  "properties": {
+                    "option": {
+                      "type": "string",
+                      "description": "Deprecated version of DiffDiskSettingsOption. Use v1beta20201201.DiffDiskSettingsOption instead",
+                      "enum": [
+                        "Local"
+                      ]
+                    },
+                    "placement": {
+                      "type": "string",
+                      "description": "Deprecated version of DiffDiskSettingsPlacement. Use v1beta20201201.DiffDiskSettingsPlacement instead",
+                      "enum": [
+                        "CacheDisk",
+                        "ResourceDisk"
+                      ]
+                    }
+                  },
+                  "description": "Deprecated version of DiffDiskSettings. Use v1beta20201201.DiffDiskSettings instead"
+                },
+                "diskSizeGB": {
+                  "type": "integer"
+                },
+                "encryptionSettings": {
+                  "type": "object",
+                  "properties": {
+                    "diskEncryptionKey": {
+                      "type": "object",
+                      "properties": {
+                        "secretUrl": {
+                          "type": "string"
+                        },
+                        "sourceVault": {
+                          "type": "object",
+                          "properties": {
+                            "reference": {
+                              "type": "object",
+                              "properties": {
+                                "armId": {
+                                  "type": "string",
+                                  "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                                  "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                                },
+                                "group": {
+                                  "type": "string",
+                                  "description": "Group is the Kubernetes group of the resource."
+                                },
+                                "kind": {
+                                  "type": "string",
+                                  "description": "Kind is the Kubernetes kind of the resource."
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "description": "Name is the Kubernetes name of the resource."
+                                }
+                              },
+                              "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+                            }
+                          },
+                          "description": "Deprecated version of SubResource. Use v1beta20201201.SubResource instead"
+                        }
+                      },
+                      "required": [
+                        "secretUrl",
+                        "sourceVault"
+                      ],
+                      "description": "Deprecated version of KeyVaultSecretReference. Use v1beta20201201.KeyVaultSecretReference instead"
+                    },
+                    "enabled": {
+                      "type": "boolean"
+                    },
+                    "keyEncryptionKey": {
+                      "type": "object",
+                      "properties": {
+                        "keyUrl": {
+                          "type": "string"
+                        },
+                        "sourceVault": {
+                          "type": "object",
+                          "properties": {
+                            "reference": {
+                              "type": "object",
+                              "properties": {
+                                "armId": {
+                                  "type": "string",
+                                  "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                                  "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                                },
+                                "group": {
+                                  "type": "string",
+                                  "description": "Group is the Kubernetes group of the resource."
+                                },
+                                "kind": {
+                                  "type": "string",
+                                  "description": "Kind is the Kubernetes kind of the resource."
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "description": "Name is the Kubernetes name of the resource."
+                                }
+                              },
+                              "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+                            }
+                          },
+                          "description": "Deprecated version of SubResource. Use v1beta20201201.SubResource instead"
+                        }
+                      },
+                      "required": [
+                        "keyUrl",
+                        "sourceVault"
+                      ],
+                      "description": "Deprecated version of KeyVaultKeyReference. Use v1beta20201201.KeyVaultKeyReference instead"
+                    }
+                  },
+                  "description": "Deprecated version of DiskEncryptionSettings. Use v1beta20201201.DiskEncryptionSettings instead"
+                },
+                "image": {
+                  "type": "object",
+                  "properties": {
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Deprecated version of VirtualHardDisk. Use v1beta20201201.VirtualHardDisk instead"
+                },
+                "managedDisk": {
+                  "type": "object",
+                  "properties": {
+                    "diskEncryptionSet": {
+                      "type": "object",
+                      "properties": {
+                        "reference": {
+                          "type": "object",
+                          "properties": {
+                            "armId": {
+                              "type": "string",
+                              "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                              "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                            },
+                            "group": {
+                              "type": "string",
+                              "description": "Group is the Kubernetes group of the resource."
+                            },
+                            "kind": {
+                              "type": "string",
+                              "description": "Kind is the Kubernetes kind of the resource."
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "Name is the Kubernetes name of the resource."
+                            }
+                          },
+                          "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+                        }
+                      },
+                      "description": "Deprecated version of DiskEncryptionSetParameters. Use v1beta20201201.DiskEncryptionSetParameters instead"
+                    },
+                    "reference": {
+                      "type": "object",
+                      "properties": {
+                        "armId": {
+                          "type": "string",
+                          "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                          "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                        },
+                        "group": {
+                          "type": "string",
+                          "description": "Group is the Kubernetes group of the resource."
+                        },
+                        "kind": {
+                          "type": "string",
+                          "description": "Kind is the Kubernetes kind of the resource."
+                        },
+                        "name": {
+                          "type": "string",
+                          "description": "Name is the Kubernetes name of the resource."
+                        }
+                      },
+                      "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+                    },
+                    "storageAccountType": {
+                      "type": "string",
+                      "description": "Deprecated version of ManagedDiskParametersStorageAccountType. Use v1beta20201201.ManagedDiskParametersStorageAccountType instead",
+                      "enum": [
+                        "Premium_LRS",
+                        "Premium_ZRS",
+                        "Standard_LRS",
+                        "StandardSSD_LRS",
+                        "StandardSSD_ZRS",
+                        "UltraSSD_LRS"
+                      ]
+                    }
+                  },
+                  "description": "Deprecated version of ManagedDiskParameters. Use v1beta20201201.ManagedDiskParameters instead"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "osType": {
+                  "type": "string",
+                  "description": "Deprecated version of OSDiskOsType. Use v1beta20201201.OSDiskOsType instead",
+                  "enum": [
+                    "Linux",
+                    "Windows"
+                  ]
+                },
+                "vhd": {
+                  "type": "object",
+                  "properties": {
+                    "uri": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Deprecated version of VirtualHardDisk. Use v1beta20201201.VirtualHardDisk instead"
+                },
+                "writeAcceleratorEnabled": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "createOption"
+              ],
+              "description": "Deprecated version of OSDisk. Use v1beta20201201.OSDisk instead"
+            }
+          },
+          "description": "Deprecated version of StorageProfile. Use v1beta20201201.StorageProfile instead"
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "virtualMachineScaleSet": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "object",
+              "properties": {
+                "armId": {
+                  "type": "string",
+                  "description": "ARMID is a string of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. The /resourcegroups/{resourceGroupName} bit is optional as some resources are scoped at the subscription level ARMID is mutually exclusive with Group, Kind, Namespace and Name.",
+                  "pattern": "(?i)^/subscriptions/([^/]+)(/resourcegroups/([^/]+))?/providers/([^/]+)/([^/]+/[^/]+)(/([^/]+/[^/]+))*$"
+                },
+                "group": {
+                  "type": "string",
+                  "description": "Group is the Kubernetes group of the resource."
+                },
+                "kind": {
+                  "type": "string",
+                  "description": "Kind is the Kubernetes kind of the resource."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name is the Kubernetes name of the resource."
+                }
+              },
+              "description": "ResourceReference represents a resource reference, either to a Kubernetes resource or directly to an Azure resource via ARMID"
+            }
+          },
+          "description": "Deprecated version of SubResource. Use v1beta20201201.SubResource instead"
+        },
+        "zones": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "provisioningState": {
+          "type": "string"
+        },
+        "status": {
+          "type": "object",
+          "properties": {
+            "additionalCapabilities": {
+              "type": "object",
+              "properties": {
+                "ultraSSDEnabled": {
+                  "type": "boolean"
+                }
+              },
+              "description": "Deprecated version of AdditionalCapabilities_Status. Use v1beta20201201.AdditionalCapabilities_Status instead"
+            },
+            "availabilitySet": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              },
+              "description": "Deprecated version of SubResource_Status. Use v1beta20201201.SubResource_Status instead"
+            },
+            "billingProfile": {
+              "type": "object",
+              "properties": {
+                "maxPrice": {
+                  "type": "number"
+                }
+              },
+              "description": "Deprecated version of BillingProfile_Status. Use v1beta20201201.BillingProfile_Status instead"
+            },
+            "conditions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "lastTransitionTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "LastTransitionTime is the last time the condition transitioned from one status to another."
+                  },
+                  "message": {
+                    "type": "string",
+                    "description": "Message is a human readable message indicating details about the transition. This field may be empty."
+                  },
+                  "observedGeneration": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "ObservedGeneration is the .metadata.generation that the condition was set based upon. For instance, if .metadata.generation is currently 12, but the .status.condition[x].observedGeneration is 9, the condition is out of date with respect to the current state of the instance."
+                  },
+                  "reason": {
+                    "type": "string",
+                    "description": "Reason for the condition's last transition. Reasons are upper CamelCase (PascalCase) with no spaces. A reason is always provided, this field will not be empty."
+                  },
+                  "severity": {
+                    "type": "string",
+                    "description": "Severity with which to treat failures of this type of condition. For conditions which have positive polarity (Status == True is their normal/healthy state), this will be omitted when Status == True For conditions which have negative polarity (Status == False is their normal/healthy state), this will be omitted when Status == False. This is omitted in all cases when Status == Unknown"
+                  },
+                  "status": {
+                    "type": "string",
+                    "description": "Status of the condition, one of True, False, or Unknown."
+                  },
+                  "type": {
+                    "type": "string",
+                    "description": "Type of condition."
+                  }
+                },
+                "required": [
+                  "lastTransitionTime",
+                  "reason",
+                  "status",
+                  "type"
+                ],
+                "description": "Condition defines an extension to status (an observation) of a resource"
+              },
+              "description": "Conditions: The observed state of the resource"
+            },
+            "diagnosticsProfile": {
+              "type": "object",
+              "properties": {
+                "bootDiagnostics": {
+                  "type": "object",
+                  "properties": {
+                    "enabled": {
+                      "type": "boolean"
+                    },
+                    "storageUri": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Deprecated version of BootDiagnostics_Status. Use v1beta20201201.BootDiagnostics_Status instead"
+                }
+              },
+              "description": "Deprecated version of DiagnosticsProfile_Status. Use v1beta20201201.DiagnosticsProfile_Status instead"
+            },
+            "evictionPolicy": {
+              "type": "string",
+              "description": "Deprecated version of EvictionPolicy_Status. Use v1beta20201201.EvictionPolicy_Status instead"
+            },
+            "extendedLocation": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Deprecated version of ExtendedLocationType_Status. Use v1beta20201201.ExtendedLocationType_Status instead"
+                }
+              },
+              "description": "Deprecated version of ExtendedLocation_Status. Use v1beta20201201.ExtendedLocation_Status instead"
+            },
+            "extensionsTimeBudget": {
+              "type": "string"
+            },
+            "hardwareProfile": {
+              "type": "object",
+              "properties": {
+                "vmSize": {
+                  "type": "string",
+                  "description": "Deprecated version of HardwareProfileStatusVmSize. Use v1beta20201201.HardwareProfileStatusVmSize instead"
+                }
+              },
+              "description": "Deprecated version of HardwareProfile_Status. Use v1beta20201201.HardwareProfile_Status instead"
+            },
+            "host": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              },
+              "description": "Deprecated version of SubResource_Status. Use v1beta20201201.SubResource_Status instead"
+            },
+            "hostGroup": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              },
+              "description": "Deprecated version of SubResource_Status. Use v1beta20201201.SubResource_Status instead"
+            },
+            "id": {
+              "type": "string"
+            },
+            "identity": {
+              "type": "object",
+              "properties": {
+                "principalId": {
+                  "type": "string"
+                },
+                "tenantId": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Deprecated version of VirtualMachineIdentityStatusType. Use v1beta20201201.VirtualMachineIdentityStatusType instead"
+                },
+                "userAssignedIdentities": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "description": "Deprecated version of VirtualMachineIdentity_Status_UserAssignedIdentities. Use v1beta20201201.VirtualMachineIdentity_Status_UserAssignedIdentities instead",
+                    "properties": {
+                      "clientId": {
+                        "type": "string"
+                      },
+                      "principalId": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  }
+                }
+              },
+              "description": "Deprecated version of VirtualMachineIdentity_Status. Use v1beta20201201.VirtualMachineIdentity_Status instead"
+            },
+            "instanceView": {
+              "type": "object",
+              "properties": {
+                "assignedHost": {
+                  "type": "string"
+                },
+                "bootDiagnostics": {
+                  "type": "object",
+                  "properties": {
+                    "consoleScreenshotBlobUri": {
+                      "type": "string"
+                    },
+                    "serialConsoleLogBlobUri": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "displayStatus": {
+                          "type": "string"
+                        },
+                        "level": {
+                          "type": "string",
+                          "description": "Deprecated version of InstanceViewStatusStatusLevel. Use v1beta20201201.InstanceViewStatusStatusLevel instead"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "time": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Deprecated version of InstanceViewStatus_Status. Use v1beta20201201.InstanceViewStatus_Status instead"
+                    }
+                  },
+                  "description": "Deprecated version of BootDiagnosticsInstanceView_Status. Use v1beta20201201.BootDiagnosticsInstanceView_Status instead"
+                },
+                "computerName": {
+                  "type": "string"
+                },
+                "disks": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "encryptionSettings": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "diskEncryptionKey": {
+                              "type": "object",
+                              "properties": {
+                                "secretUrl": {
+                                  "type": "string"
+                                },
+                                "sourceVault": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "description": "Deprecated version of SubResource_Status. Use v1beta20201201.SubResource_Status instead"
+                                }
+                              },
+                              "description": "Deprecated version of KeyVaultSecretReference_Status. Use v1beta20201201.KeyVaultSecretReference_Status instead"
+                            },
+                            "enabled": {
+                              "type": "boolean"
+                            },
+                            "keyEncryptionKey": {
+                              "type": "object",
+                              "properties": {
+                                "keyUrl": {
+                                  "type": "string"
+                                },
+                                "sourceVault": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "description": "Deprecated version of SubResource_Status. Use v1beta20201201.SubResource_Status instead"
+                                }
+                              },
+                              "description": "Deprecated version of KeyVaultKeyReference_Status. Use v1beta20201201.KeyVaultKeyReference_Status instead"
+                            }
+                          },
+                          "description": "Deprecated version of DiskEncryptionSettings_Status. Use v1beta20201201.DiskEncryptionSettings_Status instead"
+                        }
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "statuses": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "displayStatus": {
+                              "type": "string"
+                            },
+                            "level": {
+                              "type": "string",
+                              "description": "Deprecated version of InstanceViewStatusStatusLevel. Use v1beta20201201.InstanceViewStatusStatusLevel instead"
+                            },
+                            "message": {
+                              "type": "string"
+                            },
+                            "time": {
+                              "type": "string"
+                            }
+                          },
+                          "description": "Deprecated version of InstanceViewStatus_Status. Use v1beta20201201.InstanceViewStatus_Status instead"
+                        }
+                      }
+                    },
+                    "description": "Deprecated version of DiskInstanceView_Status. Use v1beta20201201.DiskInstanceView_Status instead"
+                  }
+                },
+                "extensions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "statuses": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "displayStatus": {
+                              "type": "string"
+                            },
+                            "level": {
+                              "type": "string",
+                              "description": "Deprecated version of InstanceViewStatusStatusLevel. Use v1beta20201201.InstanceViewStatusStatusLevel instead"
+                            },
+                            "message": {
+                              "type": "string"
+                            },
+                            "time": {
+                              "type": "string"
+                            }
+                          },
+                          "description": "Deprecated version of InstanceViewStatus_Status. Use v1beta20201201.InstanceViewStatus_Status instead"
+                        }
+                      },
+                      "substatuses": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "displayStatus": {
+                              "type": "string"
+                            },
+                            "level": {
+                              "type": "string",
+                              "description": "Deprecated version of InstanceViewStatusStatusLevel. Use v1beta20201201.InstanceViewStatusStatusLevel instead"
+                            },
+                            "message": {
+                              "type": "string"
+                            },
+                            "time": {
+                              "type": "string"
+                            }
+                          },
+                          "description": "Deprecated version of InstanceViewStatus_Status. Use v1beta20201201.InstanceViewStatus_Status instead"
+                        }
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "typeHandlerVersion": {
+                        "type": "string"
+                      }
+                    },
+                    "description": "Deprecated version of VirtualMachineExtensionInstanceView_Status. Use v1beta20201201.VirtualMachineExtensionInstanceView_Status instead"
+                  }
+                },
+                "hyperVGeneration": {
+                  "type": "string",
+                  "description": "Deprecated version of VirtualMachineInstanceViewStatusHyperVGeneration. Use v1beta20201201.VirtualMachineInstanceViewStatusHyperVGeneration instead"
+                },
+                "maintenanceRedeployStatus": {
+                  "type": "object",
+                  "properties": {
+                    "isCustomerInitiatedMaintenanceAllowed": {
+                      "type": "boolean"
+                    },
+                    "lastOperationMessage": {
+                      "type": "string"
+                    },
+                    "lastOperationResultCode": {
+                      "type": "string",
+                      "description": "Deprecated version of MaintenanceRedeployStatusStatusLastOperationResultCode. Use v1beta20201201.MaintenanceRedeployStatusStatusLastOperationResultCode instead"
+                    },
+                    "maintenanceWindowEndTime": {
+                      "type": "string"
+                    },
+                    "maintenanceWindowStartTime": {
+                      "type": "string"
+                    },
+                    "preMaintenanceWindowEndTime": {
+                      "type": "string"
+                    },
+                    "preMaintenanceWindowStartTime": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Deprecated version of MaintenanceRedeployStatus_Status. Use v1beta20201201.MaintenanceRedeployStatus_Status instead"
+                },
+                "osName": {
+                  "type": "string"
+                },
+                "osVersion": {
+                  "type": "string"
+                },
+                "patchStatus": {
+                  "type": "object",
+                  "properties": {
+                    "availablePatchSummary": {
+                      "type": "object",
+                      "properties": {
+                        "assessmentActivityId": {
+                          "type": "string"
+                        },
+                        "criticalAndSecurityPatchCount": {
+                          "type": "integer"
+                        },
+                        "error": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "details": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "code": {
+                                    "type": "string"
+                                  },
+                                  "message": {
+                                    "type": "string"
+                                  },
+                                  "target": {
+                                    "type": "string"
+                                  }
+                                },
+                                "description": "Deprecated version of ApiErrorBase_Status. Use v1beta20201201.ApiErrorBase_Status instead"
+                              }
+                            },
+                            "innererror": {
+                              "type": "object",
+                              "properties": {
+                                "errordetail": {
+                                  "type": "string"
+                                },
+                                "exceptiontype": {
+                                  "type": "string"
+                                }
+                              },
+                              "description": "Deprecated version of InnerError_Status. Use v1beta20201201.InnerError_Status instead"
+                            },
+                            "message": {
+                              "type": "string"
+                            },
+                            "target": {
+                              "type": "string"
+                            }
+                          },
+                          "description": "Deprecated version of ApiError_Status. Use v1beta20201201.ApiError_Status instead"
+                        },
+                        "lastModifiedTime": {
+                          "type": "string"
+                        },
+                        "otherPatchCount": {
+                          "type": "integer"
+                        },
+                        "rebootPending": {
+                          "type": "boolean"
+                        },
+                        "startTime": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "Deprecated version of AvailablePatchSummaryStatusStatus. Use v1beta20201201.AvailablePatchSummaryStatusStatus instead"
+                        }
+                      },
+                      "description": "Deprecated version of AvailablePatchSummary_Status. Use v1beta20201201.AvailablePatchSummary_Status instead"
+                    },
+                    "configurationStatuses": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "type": "string"
+                          },
+                          "displayStatus": {
+                            "type": "string"
+                          },
+                          "level": {
+                            "type": "string",
+                            "description": "Deprecated version of InstanceViewStatusStatusLevel. Use v1beta20201201.InstanceViewStatusStatusLevel instead"
+                          },
+                          "message": {
+                            "type": "string"
+                          },
+                          "time": {
+                            "type": "string"
+                          }
+                        },
+                        "description": "Deprecated version of InstanceViewStatus_Status. Use v1beta20201201.InstanceViewStatus_Status instead"
+                      }
+                    },
+                    "lastPatchInstallationSummary": {
+                      "type": "object",
+                      "properties": {
+                        "error": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "details": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "code": {
+                                    "type": "string"
+                                  },
+                                  "message": {
+                                    "type": "string"
+                                  },
+                                  "target": {
+                                    "type": "string"
+                                  }
+                                },
+                                "description": "Deprecated version of ApiErrorBase_Status. Use v1beta20201201.ApiErrorBase_Status instead"
+                              }
+                            },
+                            "innererror": {
+                              "type": "object",
+                              "properties": {
+                                "errordetail": {
+                                  "type": "string"
+                                },
+                                "exceptiontype": {
+                                  "type": "string"
+                                }
+                              },
+                              "description": "Deprecated version of InnerError_Status. Use v1beta20201201.InnerError_Status instead"
+                            },
+                            "message": {
+                              "type": "string"
+                            },
+                            "target": {
+                              "type": "string"
+                            }
+                          },
+                          "description": "Deprecated version of ApiError_Status. Use v1beta20201201.ApiError_Status instead"
+                        },
+                        "excludedPatchCount": {
+                          "type": "integer"
+                        },
+                        "failedPatchCount": {
+                          "type": "integer"
+                        },
+                        "installationActivityId": {
+                          "type": "string"
+                        },
+                        "installedPatchCount": {
+                          "type": "integer"
+                        },
+                        "lastModifiedTime": {
+                          "type": "string"
+                        },
+                        "maintenanceWindowExceeded": {
+                          "type": "boolean"
+                        },
+                        "notSelectedPatchCount": {
+                          "type": "integer"
+                        },
+                        "pendingPatchCount": {
+                          "type": "integer"
+                        },
+                        "startTime": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "Deprecated version of LastPatchInstallationSummaryStatusStatus. Use v1beta20201201.LastPatchInstallationSummaryStatusStatus instead"
+                        }
+                      },
+                      "description": "Deprecated version of LastPatchInstallationSummary_Status. Use v1beta20201201.LastPatchInstallationSummary_Status instead"
+                    }
+                  },
+                  "description": "Deprecated version of VirtualMachinePatchStatus_Status. Use v1beta20201201.VirtualMachinePatchStatus_Status instead"
+                },
+                "platformFaultDomain": {
+                  "type": "integer"
+                },
+                "platformUpdateDomain": {
+                  "type": "integer"
+                },
+                "rdpThumbPrint": {
+                  "type": "string"
+                },
+                "statuses": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "displayStatus": {
+                        "type": "string"
+                      },
+                      "level": {
+                        "type": "string",
+                        "description": "Deprecated version of InstanceViewStatusStatusLevel. Use v1beta20201201.InstanceViewStatusStatusLevel instead"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "time": {
+                        "type": "string"
+                      }
+                    },
+                    "description": "Deprecated version of InstanceViewStatus_Status. Use v1beta20201201.InstanceViewStatus_Status instead"
+                  }
+                },
+                "vmAgent": {
+                  "type": "object",
+                  "properties": {
+                    "extensionHandlers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "status": {
+                            "type": "object",
+                            "properties": {
+                              "code": {
+                                "type": "string"
+                              },
+                              "displayStatus": {
+                                "type": "string"
+                              },
+                              "level": {
+                                "type": "string",
+                                "description": "Deprecated version of InstanceViewStatusStatusLevel. Use v1beta20201201.InstanceViewStatusStatusLevel instead"
+                              },
+                              "message": {
+                                "type": "string"
+                              },
+                              "time": {
+                                "type": "string"
+                              }
+                            },
+                            "description": "Deprecated version of InstanceViewStatus_Status. Use v1beta20201201.InstanceViewStatus_Status instead"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "typeHandlerVersion": {
+                            "type": "string"
+                          }
+                        },
+                        "description": "Deprecated version of VirtualMachineExtensionHandlerInstanceView_Status. Use v1beta20201201.VirtualMachineExtensionHandlerInstanceView_Status instead"
+                      }
+                    },
+                    "statuses": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "type": "string"
+                          },
+                          "displayStatus": {
+                            "type": "string"
+                          },
+                          "level": {
+                            "type": "string",
+                            "description": "Deprecated version of InstanceViewStatusStatusLevel. Use v1beta20201201.InstanceViewStatusStatusLevel instead"
+                          },
+                          "message": {
+                            "type": "string"
+                          },
+                          "time": {
+                            "type": "string"
+                          }
+                        },
+                        "description": "Deprecated version of InstanceViewStatus_Status. Use v1beta20201201.InstanceViewStatus_Status instead"
+                      }
+                    },
+                    "vmAgentVersion": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Deprecated version of VirtualMachineAgentInstanceView_Status. Use v1beta20201201.VirtualMachineAgentInstanceView_Status instead"
+                },
+                "vmHealth": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "displayStatus": {
+                          "type": "string"
+                        },
+                        "level": {
+                          "type": "string",
+                          "description": "Deprecated version of InstanceViewStatusStatusLevel. Use v1beta20201201.InstanceViewStatusStatusLevel instead"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "time": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Deprecated version of InstanceViewStatus_Status. Use v1beta20201201.InstanceViewStatus_Status instead"
+                    }
+                  },
+                  "description": "Deprecated version of VirtualMachineHealthStatus_Status. Use v1beta20201201.VirtualMachineHealthStatus_Status instead"
+                }
+              },
+              "description": "Deprecated version of VirtualMachineInstanceView_Status. Use v1beta20201201.VirtualMachineInstanceView_Status instead"
+            },
+            "licenseType": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "networkProfile": {
+              "type": "object",
+              "properties": {
+                "networkInterfaces": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "primary": {
+                        "type": "boolean"
+                      }
+                    },
+                    "description": "Deprecated version of NetworkInterfaceReference_Status. Use v1beta20201201.NetworkInterfaceReference_Status instead"
+                  }
+                }
+              },
+              "description": "Deprecated version of NetworkProfile_Status. Use v1beta20201201.NetworkProfile_Status instead"
+            },
+            "osProfile": {
+              "type": "object",
+              "properties": {
+                "adminPassword": {
+                  "type": "string"
+                },
+                "adminUsername": {
+                  "type": "string"
+                },
+                "allowExtensionOperations": {
+                  "type": "boolean"
+                },
+                "computerName": {
+                  "type": "string"
+                },
+                "customData": {
+                  "type": "string"
+                },
+                "linuxConfiguration": {
+                  "type": "object",
+                  "properties": {
+                    "disablePasswordAuthentication": {
+                      "type": "boolean"
+                    },
+                    "patchSettings": {
+                      "type": "object",
+                      "properties": {
+                        "patchMode": {
+                          "type": "string",
+                          "description": "Deprecated version of LinuxPatchSettingsStatusPatchMode. Use v1beta20201201.LinuxPatchSettingsStatusPatchMode instead"
+                        }
+                      },
+                      "description": "Deprecated version of LinuxPatchSettings_Status. Use v1beta20201201.LinuxPatchSettings_Status instead"
+                    },
+                    "provisionVMAgent": {
+                      "type": "boolean"
+                    },
+                    "ssh": {
+                      "type": "object",
+                      "properties": {
+                        "publicKeys": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "keyData": {
+                                "type": "string"
+                              },
+                              "path": {
+                                "type": "string"
+                              }
+                            },
+                            "description": "Deprecated version of SshPublicKey_Status. Use v1beta20201201.SshPublicKey_Status instead"
+                          }
+                        }
+                      },
+                      "description": "Deprecated version of SshConfiguration_Status. Use v1beta20201201.SshConfiguration_Status instead"
+                    }
+                  },
+                  "description": "Deprecated version of LinuxConfiguration_Status. Use v1beta20201201.LinuxConfiguration_Status instead"
+                },
+                "requireGuestProvisionSignal": {
+                  "type": "boolean"
+                },
+                "secrets": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sourceVault": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          }
+                        },
+                        "description": "Deprecated version of SubResource_Status. Use v1beta20201201.SubResource_Status instead"
+                      },
+                      "vaultCertificates": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "certificateStore": {
+                              "type": "string"
+                            },
+                            "certificateUrl": {
+                              "type": "string"
+                            }
+                          },
+                          "description": "Deprecated version of VaultCertificate_Status. Use v1beta20201201.VaultCertificate_Status instead"
+                        }
+                      }
+                    },
+                    "description": "Deprecated version of VaultSecretGroup_Status. Use v1beta20201201.VaultSecretGroup_Status instead"
+                  }
+                },
+                "windowsConfiguration": {
+                  "type": "object",
+                  "properties": {
+                    "additionalUnattendContent": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "componentName": {
+                            "type": "string",
+                            "description": "Deprecated version of AdditionalUnattendContentStatusComponentName. Use v1beta20201201.AdditionalUnattendContentStatusComponentName instead"
+                          },
+                          "content": {
+                            "type": "string"
+                          },
+                          "passName": {
+                            "type": "string",
+                            "description": "Deprecated version of AdditionalUnattendContentStatusPassName. Use v1beta20201201.AdditionalUnattendContentStatusPassName instead"
+                          },
+                          "settingName": {
+                            "type": "string",
+                            "description": "Deprecated version of AdditionalUnattendContentStatusSettingName. Use v1beta20201201.AdditionalUnattendContentStatusSettingName instead"
+                          }
+                        },
+                        "description": "Deprecated version of AdditionalUnattendContent_Status. Use v1beta20201201.AdditionalUnattendContent_Status instead"
+                      }
+                    },
+                    "enableAutomaticUpdates": {
+                      "type": "boolean"
+                    },
+                    "patchSettings": {
+                      "type": "object",
+                      "properties": {
+                        "enableHotpatching": {
+                          "type": "boolean"
+                        },
+                        "patchMode": {
+                          "type": "string",
+                          "description": "Deprecated version of PatchSettingsStatusPatchMode. Use v1beta20201201.PatchSettingsStatusPatchMode instead"
+                        }
+                      },
+                      "description": "Deprecated version of PatchSettings_Status. Use v1beta20201201.PatchSettings_Status instead"
+                    },
+                    "provisionVMAgent": {
+                      "type": "boolean"
+                    },
+                    "timeZone": {
+                      "type": "string"
+                    },
+                    "winRM": {
+                      "type": "object",
+                      "properties": {
+                        "listeners": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "certificateUrl": {
+                                "type": "string"
+                              },
+                              "protocol": {
+                                "type": "string",
+                                "description": "Deprecated version of WinRMListenerStatusProtocol. Use v1beta20201201.WinRMListenerStatusProtocol instead"
+                              }
+                            },
+                            "description": "Deprecated version of WinRMListener_Status. Use v1beta20201201.WinRMListener_Status instead"
+                          }
+                        }
+                      },
+                      "description": "Deprecated version of WinRMConfiguration_Status. Use v1beta20201201.WinRMConfiguration_Status instead"
+                    }
+                  },
+                  "description": "Deprecated version of WindowsConfiguration_Status. Use v1beta20201201.WindowsConfiguration_Status instead"
+                }
+              },
+              "description": "Deprecated version of OSProfile_Status. Use v1beta20201201.OSProfile_Status instead"
+            },
+            "plan": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "product": {
+                  "type": "string"
+                },
+                "promotionCode": {
+                  "type": "string"
+                },
+                "publisher": {
+                  "type": "string"
+                }
+              },
+              "description": "Deprecated version of Plan_Status. Use v1beta20201201.Plan_Status instead"
+            },
+            "platformFaultDomain": {
+              "type": "integer"
+            },
+            "priority": {
+              "type": "string",
+              "description": "Deprecated version of Priority_Status. Use v1beta20201201.Priority_Status instead"
+            },
+            "provisioningState": {
+              "type": "string"
+            },
+            "proximityPlacementGroup": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              },
+              "description": "Deprecated version of SubResource_Status. Use v1beta20201201.SubResource_Status instead"
+            },
+            "resources": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "autoUpgradeMinorVersion": {
+                    "type": "boolean"
+                  },
+                  "enableAutomaticUpgrade": {
+                    "type": "boolean"
+                  },
+                  "forceUpdateTag": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "instanceView": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "statuses": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "displayStatus": {
+                              "type": "string"
+                            },
+                            "level": {
+                              "type": "string",
+                              "description": "Deprecated version of InstanceViewStatusStatusLevel. Use v1beta20201201.InstanceViewStatusStatusLevel instead"
+                            },
+                            "message": {
+                              "type": "string"
+                            },
+                            "time": {
+                              "type": "string"
+                            }
+                          },
+                          "description": "Deprecated version of InstanceViewStatus_Status. Use v1beta20201201.InstanceViewStatus_Status instead"
+                        }
+                      },
+                      "substatuses": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "displayStatus": {
+                              "type": "string"
+                            },
+                            "level": {
+                              "type": "string",
+                              "description": "Deprecated version of InstanceViewStatusStatusLevel. Use v1beta20201201.InstanceViewStatusStatusLevel instead"
+                            },
+                            "message": {
+                              "type": "string"
+                            },
+                            "time": {
+                              "type": "string"
+                            }
+                          },
+                          "description": "Deprecated version of InstanceViewStatus_Status. Use v1beta20201201.InstanceViewStatus_Status instead"
+                        }
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "typeHandlerVersion": {
+                        "type": "string"
+                      }
+                    },
+                    "description": "Deprecated version of VirtualMachineExtensionInstanceView_Status. Use v1beta20201201.VirtualMachineExtensionInstanceView_Status instead"
+                  },
+                  "location": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "properties_type": {
+                    "type": "string"
+                  },
+                  "protectedSettings": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "x-kubernetes-preserve-unknown-fields": "true"
+                    }
+                  },
+                  "provisioningState": {
+                    "type": "string"
+                  },
+                  "publisher": {
+                    "type": "string"
+                  },
+                  "settings": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "x-kubernetes-preserve-unknown-fields": "true"
+                    }
+                  },
+                  "tags": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "typeHandlerVersion": {
+                    "type": "string"
+                  }
+                },
+                "description": "Deprecated version of VirtualMachineExtension_Status. Use v1beta20201201.VirtualMachineExtension_Status instead"
+              }
+            },
+            "securityProfile": {
+              "type": "object",
+              "properties": {
+                "encryptionAtHost": {
+                  "type": "boolean"
+                },
+                "securityType": {
+                  "type": "string",
+                  "description": "Deprecated version of SecurityProfileStatusSecurityType. Use v1beta20201201.SecurityProfileStatusSecurityType instead"
+                },
+                "uefiSettings": {
+                  "type": "object",
+                  "properties": {
+                    "secureBootEnabled": {
+                      "type": "boolean"
+                    },
+                    "vTpmEnabled": {
+                      "type": "boolean"
+                    }
+                  },
+                  "description": "Deprecated version of UefiSettings_Status. Use v1beta20201201.UefiSettings_Status instead"
+                }
+              },
+              "description": "Deprecated version of SecurityProfile_Status. Use v1beta20201201.SecurityProfile_Status instead"
+            },
+            "storageProfile": {
+              "type": "object",
+              "properties": {
+                "dataDisks": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "caching": {
+                        "type": "string",
+                        "description": "Deprecated version of Caching_Status. Use v1beta20201201.Caching_Status instead"
+                      },
+                      "createOption": {
+                        "type": "string",
+                        "description": "Deprecated version of CreateOption_Status. Use v1beta20201201.CreateOption_Status instead"
+                      },
+                      "detachOption": {
+                        "type": "string",
+                        "description": "Deprecated version of DetachOption_Status. Use v1beta20201201.DetachOption_Status instead"
+                      },
+                      "diskIOPSReadWrite": {
+                        "type": "integer"
+                      },
+                      "diskMBpsReadWrite": {
+                        "type": "integer"
+                      },
+                      "diskSizeGB": {
+                        "type": "integer"
+                      },
+                      "image": {
+                        "type": "object",
+                        "properties": {
+                          "uri": {
+                            "type": "string"
+                          }
+                        },
+                        "description": "Deprecated version of VirtualHardDisk_Status. Use v1beta20201201.VirtualHardDisk_Status instead"
+                      },
+                      "lun": {
+                        "type": "integer"
+                      },
+                      "managedDisk": {
+                        "type": "object",
+                        "properties": {
+                          "diskEncryptionSet": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              }
+                            },
+                            "description": "Deprecated version of SubResource_Status. Use v1beta20201201.SubResource_Status instead"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "storageAccountType": {
+                            "type": "string",
+                            "description": "Deprecated version of StorageAccountType_Status. Use v1beta20201201.StorageAccountType_Status instead"
+                          }
+                        },
+                        "description": "Deprecated version of ManagedDiskParameters_Status. Use v1beta20201201.ManagedDiskParameters_Status instead"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "toBeDetached": {
+                        "type": "boolean"
+                      },
+                      "vhd": {
+                        "type": "object",
+                        "properties": {
+                          "uri": {
+                            "type": "string"
+                          }
+                        },
+                        "description": "Deprecated version of VirtualHardDisk_Status. Use v1beta20201201.VirtualHardDisk_Status instead"
+                      },
+                      "writeAcceleratorEnabled": {
+                        "type": "boolean"
+                      }
+                    },
+                    "description": "Deprecated version of DataDisk_Status. Use v1beta20201201.DataDisk_Status instead"
+                  }
+                },
+                "imageReference": {
+                  "type": "object",
+                  "properties": {
+                    "exactVersion": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "offer": {
+                      "type": "string"
+                    },
+                    "publisher": {
+                      "type": "string"
+                    },
+                    "sku": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Deprecated version of ImageReference_Status. Use v1beta20201201.ImageReference_Status instead"
+                },
+                "osDisk": {
+                  "type": "object",
+                  "properties": {
+                    "caching": {
+                      "type": "string",
+                      "description": "Deprecated version of Caching_Status. Use v1beta20201201.Caching_Status instead"
+                    },
+                    "createOption": {
+                      "type": "string",
+                      "description": "Deprecated version of CreateOption_Status. Use v1beta20201201.CreateOption_Status instead"
+                    },
+                    "diffDiskSettings": {
+                      "type": "object",
+                      "properties": {
+                        "option": {
+                          "type": "string",
+                          "description": "Deprecated version of DiffDiskOption_Status. Use v1beta20201201.DiffDiskOption_Status instead"
+                        },
+                        "placement": {
+                          "type": "string",
+                          "description": "Deprecated version of DiffDiskPlacement_Status. Use v1beta20201201.DiffDiskPlacement_Status instead"
+                        }
+                      },
+                      "description": "Deprecated version of DiffDiskSettings_Status. Use v1beta20201201.DiffDiskSettings_Status instead"
+                    },
+                    "diskSizeGB": {
+                      "type": "integer"
+                    },
+                    "encryptionSettings": {
+                      "type": "object",
+                      "properties": {
+                        "diskEncryptionKey": {
+                          "type": "object",
+                          "properties": {
+                            "secretUrl": {
+                              "type": "string"
+                            },
+                            "sourceVault": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "description": "Deprecated version of SubResource_Status. Use v1beta20201201.SubResource_Status instead"
+                            }
+                          },
+                          "description": "Deprecated version of KeyVaultSecretReference_Status. Use v1beta20201201.KeyVaultSecretReference_Status instead"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        },
+                        "keyEncryptionKey": {
+                          "type": "object",
+                          "properties": {
+                            "keyUrl": {
+                              "type": "string"
+                            },
+                            "sourceVault": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "description": "Deprecated version of SubResource_Status. Use v1beta20201201.SubResource_Status instead"
+                            }
+                          },
+                          "description": "Deprecated version of KeyVaultKeyReference_Status. Use v1beta20201201.KeyVaultKeyReference_Status instead"
+                        }
+                      },
+                      "description": "Deprecated version of DiskEncryptionSettings_Status. Use v1beta20201201.DiskEncryptionSettings_Status instead"
+                    },
+                    "image": {
+                      "type": "object",
+                      "properties": {
+                        "uri": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Deprecated version of VirtualHardDisk_Status. Use v1beta20201201.VirtualHardDisk_Status instead"
+                    },
+                    "managedDisk": {
+                      "type": "object",
+                      "properties": {
+                        "diskEncryptionSet": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            }
+                          },
+                          "description": "Deprecated version of SubResource_Status. Use v1beta20201201.SubResource_Status instead"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "storageAccountType": {
+                          "type": "string",
+                          "description": "Deprecated version of StorageAccountType_Status. Use v1beta20201201.StorageAccountType_Status instead"
+                        }
+                      },
+                      "description": "Deprecated version of ManagedDiskParameters_Status. Use v1beta20201201.ManagedDiskParameters_Status instead"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "osType": {
+                      "type": "string",
+                      "description": "Deprecated version of OSDiskStatusOsType. Use v1beta20201201.OSDiskStatusOsType instead"
+                    },
+                    "vhd": {
+                      "type": "object",
+                      "properties": {
+                        "uri": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Deprecated version of VirtualHardDisk_Status. Use v1beta20201201.VirtualHardDisk_Status instead"
+                    },
+                    "writeAcceleratorEnabled": {
+                      "type": "boolean"
+                    }
+                  },
+                  "description": "Deprecated version of OSDisk_Status. Use v1beta20201201.OSDisk_Status instead"
+                }
+              },
+              "description": "Deprecated version of StorageProfile_Status. Use v1beta20201201.StorageProfile_Status instead"
+            },
+            "tags": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "type": {
+              "type": "string"
+            },
+            "virtualMachineScaleSet": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              },
+              "description": "Deprecated version of SubResource_Status. Use v1beta20201201.SubResource_Status instead"
+            },
+            "vmId": {
+              "type": "string"
+            },
+            "zones": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "Deprecated version of VirtualMachine_Status. Use v1beta20201201.VirtualMachine_Status instead"
+        }
+      },
+      "required": [
+        "owner"
+      ]
+    },
+    "virtualmachines-compute": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/virtualmachines-computeProperties"
+        },
+        "id": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Resource Id"
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Resource Name"
+        },
+        "type": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Resource Type"
+        },
+        "location": {
+          "type": "string",
+          "description": "The resource location"
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Resource tags"
+        },
+        "extendedLocation": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "The extended location type."
+            },
+            "name": {
+              "type": "string",
+              "description": "The extended location name."
+            }
+          }
+        }
+      },
+      "required": [
+        "location"
+      ],
+      "description": "The virtualmachines-compute resource definition."
+    },
+    "virtualmachines-computePatch": {
+      "type": "object",
+      "properties": {
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Resource tags"
+        }
+      },
+      "description": "The virtualmachines-compute resource patch definition."
+    },
+    "virtualmachines-computeListResult": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/virtualmachines-compute"
+          }
+        },
+        "nextLink": {
+          "type": "string"
+        }
+      }
+    },
+    "ResourceProviderOperationList": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourceProviderOperation"
+          }
+        },
+        "nextLink": {
+          "type": "string"
+        }
+      },
+      "description": "Results of the request to list operations."
+    },
+    "ResourceProviderOperation": {
+      "type": "object",
+      "properties": {
+        "isDataAction": {
+          "type": "string",
+          "description": "Indicates whether the operation applies to data-plane."
+        },
+        "name": {
+          "type": "string",
+          "description": "Operation name, in format of {provider}/{resource}/{operation}"
+        },
+        "display": {
+          "type": "object",
+          "properties": {
+            "provider": {
+              "type": "string",
+              "description": "The resource provider."
+            },
+            "resource": {
+              "type": "string",
+              "description": "Resource on which the operation is performed."
+            },
+            "operation": {
+              "type": "string",
+              "description": "Type of operation: get, read, delete, etc."
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of this operation."
+            }
+          },
+          "description": "Display metadata associated with the operation."
+        }
+      },
+      "description": "Results of the request to list operations."
+    }
+  },
+  "parameters": {
+    "virtualmachines-computeNameParameter": {
+      "name": "virtualmachines-computeName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 3
+    },
+    "SubscriptionIdParameter": {
+      "name": "subscriptionId",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)"
+    },
+    "ResourceGroupNameParameter": {
+      "name": "resourceGroupName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the resource group."
+    },
+    "ApiVersionParameter": {
+      "name": "api-version",
+      "in": "query",
+      "required": true,
+      "type": "string",
+      "description": "The API version to be used with the HTTP request (e.g. YYYY-MM-DD)."
+    }
+  }
+}
