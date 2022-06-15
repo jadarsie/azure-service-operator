@@ -15,7 +15,7 @@ entries:
   - apiVersion: v2
     created: "2022-06-15T01:31:16.161695133Z"
     description: Deploy components and dependencies of azure-service-operator
-    digest: 65add8ac70c5b90f432389542d125f95d43b4867fa1e59944286b962081c0778
+    digest: a553df8c7f515568f73cd695a9d00da70c21e53df49751d9fbaaecae1478cba6
     home: https://github.com/jadarsie/azure-service-operator/v2
     name: azure-service-operator
     sources:

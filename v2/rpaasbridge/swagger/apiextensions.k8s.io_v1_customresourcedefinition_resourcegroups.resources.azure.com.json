@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "ASOExtension",
-    "description": "The Microsoft.ASOExtension Rest API spec.",
+    "title": "ArcInAzure",
+    "description": "The Microsoft.ArcInAzure Rest API spec.",
     "version": "2020-01-01-preview",
     "x-ms-code-generation-settings": {
-      "name": "ArcOnAzureClient"
+      "name": "ArcInAzureClient"
     }
   },
   "host": "management.azure.com",
@@ -19,9 +19,9 @@
     "application/json"
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ASOExtension/resourcegroups-resources/{resourcegroups-resourcesName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ArcInAzure/resourcegroups/{resourcegroupsName}": {
       "get": {
-        "operationId": "resourcegroups-resources_Retrieve",
+        "operationId": "resourcegroups_Retrieve",
         "parameters": [
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -30,7 +30,7 @@
             "$ref": "#/parameters/ResourceGroupNameParameter"
           },
           {
-            "$ref": "#/parameters/resourcegroups-resourcesNameParameter"
+            "$ref": "#/parameters/resourcegroupsNameParameter"
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -38,15 +38,15 @@
         ],
         "responses": {
           "200": {
-            "description": "Retrieves the resourcegroups-resources resource.",
+            "description": "Retrieves the resourcegroups resource.",
             "schema": {
-              "$ref": "#/definitions/resourcegroups-resources"
+              "$ref": "#/definitions/resourcegroups"
             }
           }
         }
       },
       "put": {
-        "operationId": "resourcegroups-resources_CreateOrUpdate",
+        "operationId": "resourcegroups_CreateOrUpdate",
         "parameters": [
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -55,37 +55,37 @@
             "$ref": "#/parameters/ResourceGroupNameParameter"
           },
           {
-            "$ref": "#/parameters/resourcegroups-resourcesNameParameter"
+            "$ref": "#/parameters/resourcegroupsNameParameter"
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
           {
-            "name": "resourcegroups-resources",
+            "name": "resourcegroups",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/resourcegroups-resources"
+              "$ref": "#/definitions/resourcegroups"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Updates the resourcegroups-resources resource.",
+            "description": "Updates the resourcegroups resource.",
             "schema": {
-              "$ref": "#/definitions/resourcegroups-resources"
+              "$ref": "#/definitions/resourcegroups"
             }
           },
           "201": {
-            "description": "Creates the resourcegroups-resources resource.",
+            "description": "Creates the resourcegroups resource.",
             "schema": {
-              "$ref": "#/definitions/resourcegroups-resources"
+              "$ref": "#/definitions/resourcegroups"
             }
           }
         }
       },
       "delete": {
-        "operationId": "resourcegroups-resources_Delete",
+        "operationId": "resourcegroups_Delete",
         "parameters": [
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -94,7 +94,7 @@
             "$ref": "#/parameters/ResourceGroupNameParameter"
           },
           {
-            "$ref": "#/parameters/resourcegroups-resourcesNameParameter"
+            "$ref": "#/parameters/resourcegroupsNameParameter"
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -102,53 +102,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Deletes the resourcegroups-resources resource."
-          }
-        }
-      },
-      "patch": {
-        "operationId": "resourcegroups-resources_Update",
-        "parameters": [
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ResourceGroupNameParameter"
-          },
-          {
-            "$ref": "#/parameters/resourcegroups-resourcesNameParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "name": "resourcegroups-resources",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/resourcegroups-resourcesPatch"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Updates the resourcegroups-resources resource.",
-            "schema": {
-              "$ref": "#/definitions/resourcegroups-resources"
-            }
-          },
-          "201": {
-            "description": "Updates the resourcegroups-resources resource.",
-            "schema": {
-              "$ref": "#/definitions/resourcegroups-resources"
-            }
+            "description": "Deletes the resourcegroups resource."
           }
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ASOExtension/resourcegroups-resources": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ArcInAzure/resourcegroups": {
       "get": {
-        "operationId": "resourcegroups-resources_ListByResourceGroup",
+        "operationId": "resourcegroups_ListByResourceGroup",
         "parameters": [
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -162,9 +123,9 @@
         ],
         "responses": {
           "200": {
-            "description": "Lists all resourcegroups-resources under the resouce group.",
+            "description": "Lists all resourcegroups under the resouce group.",
             "schema": {
-              "$ref": "#/definitions/resourcegroups-resourcesListResult"
+              "$ref": "#/definitions/resourcegroupsListResult"
             }
           }
         },
@@ -173,9 +134,9 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.ASOExtension/resourcegroups-resources": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.ArcInAzure/resourcegroups": {
       "get": {
-        "operationId": "resourcegroups-resources_ListBySubscription",
+        "operationId": "resourcegroups_ListBySubscription",
         "parameters": [
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -186,9 +147,9 @@
         ],
         "responses": {
           "200": {
-            "description": "Lists all resourcegroups-resources under the subscription.",
+            "description": "Lists all resourcegroups under the subscription.",
             "schema": {
-              "$ref": "#/definitions/resourcegroups-resourcesListResult"
+              "$ref": "#/definitions/resourcegroupsListResult"
             }
           }
         },
@@ -197,7 +158,7 @@
         }
       }
     },
-    "/providers/Microsoft.ASOExtension/operations": {
+    "/providers/Microsoft.ArcInAzure/operations": {
       "get": {
         "operationId": "Operations_List",
         "parameters": [
@@ -220,16 +181,12 @@
     }
   },
   "definitions": {
-    "resourcegroups-resourcesProperties": {
+    "resourcegroupsProperties": {
       "type": "object",
       "properties": {
         "azureName": {
           "type": "string",
           "description": "AzureName: The name of the resource in Azure. This is often the same as the name of the resource in Kubernetes but it doesn't have to be."
-        },
-        "location": {
-          "type": "string",
-          "description": "Location is the Azure location for the group (eg westus2, southcentralus, etc...)"
         },
         "managedBy": {
           "type": "string",
@@ -319,16 +276,13 @@
             }
           }
         }
-      },
-      "required": [
-        "location"
-      ]
+      }
     },
-    "resourcegroups-resources": {
+    "resourcegroups": {
       "type": "object",
       "properties": {
         "properties": {
-          "$ref": "#/definitions/resourcegroups-resourcesProperties"
+          "$ref": "#/definitions/resourcegroupsProperties"
         },
         "id": {
           "type": "string",
@@ -373,28 +327,15 @@
       "required": [
         "location"
       ],
-      "description": "The resourcegroups-resources resource definition."
+      "description": "The resourcegroups resource definition."
     },
-    "resourcegroups-resourcesPatch": {
-      "type": "object",
-      "properties": {
-        "tags": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "description": "Resource tags"
-        }
-      },
-      "description": "The resourcegroups-resources resource patch definition."
-    },
-    "resourcegroups-resourcesListResult": {
+    "resourcegroupsListResult": {
       "type": "object",
       "properties": {
         "value": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/resourcegroups-resources"
+            "$ref": "#/definitions/resourcegroups"
           }
         },
         "nextLink": {
@@ -455,8 +396,8 @@
     }
   },
   "parameters": {
-    "resourcegroups-resourcesNameParameter": {
-      "name": "resourcegroups-resourcesName",
+    "resourcegroupsNameParameter": {
+      "name": "resourcegroupsName",
       "in": "path",
       "required": true,
       "type": "string",

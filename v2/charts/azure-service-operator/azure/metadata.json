@@ -1,18 +1,16 @@
 {
     "mappings": [
         {
-            "ApiVersion": "<Azure API Version - e.g. 2020-01-01-preview>",
-            "ResourceType": "<Azure Resource Type - e.g. towers>",
-            "ProviderName": "<Azure Provider Name - e.g. Microsoft.Contoso>",
+            "ApiVersion": "2020-01-01-preview",
+            "ResourceType": "resourcegroups",
+            "ProviderName": "Microsoft.ArcInAzure",
             "ResourceMapping": {
-                "Version": "<Kubernetes CRD Version - e.g. v1>",
-                "Group": "<Kubernetes CRD API Group - e.g. stable.example.com>",
-                "Kind": "<Kubernetes CRD Kind - e.g. CronTab>",
-                "Name": "<Kubernetes CRD API Plural Name - e.g. crontabs>",
-                "IsAsync": "<Kubernetes CRD Supports ARM Async - e.g. true|false (Default is false)>",
+                "Version": "v1beta20200601",
+                "Group": "resources.azure.com",
+                "Kind": "ResourceGroup",
+                "Name": "resourcegroups",
                 "Liquid": {
-                    "AzureToKubernetes": "<File in Helm Package - e.g. azure/virtualMachines/myAzureTransform.json>",
-                    "KubernetesToAzure": "<File in Helm Package - e.g. azure/virtualMachines/myKubernetesTransform.json>"
+                    "AzureToKubernetes": "resourcegroups/a2k.json>"
                 }
             }
         }
