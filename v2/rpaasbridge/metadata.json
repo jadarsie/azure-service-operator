@@ -2,13 +2,16 @@
     "mappings": [
         {
             "ApiVersion": "2020-01-01-preview",
-            "ResourceType": "resourcegroups-resources",
-            "ProviderName": "Microsoft.ArcTargetAzure",
+            "ResourceType": "resourcegroups",
+            "ProviderName": "Microsoft.ArcInAzure",
             "ResourceMapping": {
                 "Version": "v1beta20200601",
                 "Group": "resources.azure.com",
                 "Kind": "ResourceGroup",
-                "Name": "resourcegroups"
+                "Name": "resourcegroups",
+                "Liquid": {
+                    "AzureToKubernetes": "resourcegroups/a2k.json>"
+                }
             }
         }
     ]
