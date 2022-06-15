@@ -4,4 +4,4 @@ home: https://github.com/jadarsie/azure-service-operator/v2
 name: azure-service-operator
 sources:
 - https://github.com/jadarsie/azure-service-operator/v2
-version: v2.0.0-beta.12
+version: v2.0.0-beta.13
