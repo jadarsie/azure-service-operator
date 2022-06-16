@@ -4,9 +4,6 @@ metadata:
   annotations:
     cert-manager.io/inject-ca-from: azureserviceoperator-system/azureserviceoperator-serving-cert
     controller-gen.kubebuilder.io/version: v0.8.0
-    management.azure.com/api-version: 2020-01-01-preview
-    management.azure.com/providerName: Microsoft.ArcTargetAzure
-    management.azure.com/resourceType: redisenterprisedatabases-cache
   name: redisenterprisedatabases.cache.azure.com
 spec:
   conversion:
