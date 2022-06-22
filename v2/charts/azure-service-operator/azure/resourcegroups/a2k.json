@@ -1,5 +1,5 @@
 {
   "spec": {
-    "location": {{ content.location | json }}
+    "location": "westus"
   }
 }

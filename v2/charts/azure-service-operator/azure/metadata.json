@@ -10,7 +10,7 @@
                 "Kind": "ResourceGroup",
                 "Name": "resourcegroups",
                 "Liquid": {
-                    "AzureToKubernetes": "resourcegroups/a2k.json>"
+                    "AzureToKubernetes": "resourcegroups/a2k.json"
                 }
             }
         }
