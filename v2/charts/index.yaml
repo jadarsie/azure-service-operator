@@ -2,7 +2,18 @@ apiVersion: v1
 entries:
   azure-service-operator:
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.661698289Z"
+    created: "2022-06-24T22:36:12.491016681Z"
+    description: Deploy components and dependencies of azure-service-operator
+    digest: 058616a7e0f6e40dedf5986813aa999feaf860bdbad00a9acde22d23acd425f4
+    home: https://github.com/jadarsie/azure-service-operator/v2
+    name: azure-service-operator
+    sources:
+    - https://github.com/jadarsie/azure-service-operator/v2
+    urls:
+    - azure-service-operator-v2.0.0-beta.17.tgz
+    version: v2.0.0-beta.17
+  - apiVersion: v2
+    created: "2022-06-24T22:36:12.473695924Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: cbb2ed9dd06cf79a1e2991439d601cff2cce6b580f299911af843a62dfff2d4d
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -13,7 +24,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.16.tgz
     version: v2.0.0-beta.16
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.645830706Z"
+    created: "2022-06-24T22:36:12.446296818Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: 65f26fc06ae048409b8a9a1e25f92b92ee2b92c25b3d251142b449a1186c287a
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -24,7 +35,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.13.tgz
     version: v2.0.0-beta.13
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.629735221Z"
+    created: "2022-06-24T22:36:12.428351452Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: a553df8c7f515568f73cd695a9d00da70c21e53df49751d9fbaaecae1478cba6
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -35,7 +46,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.12.tgz
     version: v2.0.0-beta.12
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.613750636Z"
+    created: "2022-06-24T22:36:12.410263583Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: cb3ef50d20ee6d913e8c9a899b6081f500a62f3917edde82f26aa95f5d3aae27
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -46,7 +57,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.11.tgz
     version: v2.0.0-beta.11
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.822102339Z"
+    created: "2022-06-24T22:36:12.733954582Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: 182a88d3bb8c8bc33ccf9d4736c806cd8028aea7205cd44b30ee2a1d6031af86
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -57,7 +68,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.9.tgz
     version: v2.0.0-beta.9
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.805658449Z"
+    created: "2022-06-24T22:36:12.696241623Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: 0e8ef31d7cc142f60dcad8010715908f06352f9af51a0a4aa443d3740cd32efc
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -68,7 +79,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.8.tgz
     version: v2.0.0-beta.8
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.787795843Z"
+    created: "2022-06-24T22:36:12.668611413Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: f72e36062ccaba9c9312afb266c207413b8cdab4f4cd9e8a56a10e18f87f32b4
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -79,7 +90,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.7.tgz
     version: v2.0.0-beta.7
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.770943149Z"
+    created: "2022-06-24T22:36:12.652293471Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: a6d4c150490a1c463df8c028fa41d4bff8f42509a61b725e71f9ced42083bbd0
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -90,7 +101,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.6.tgz
     version: v2.0.0-beta.6
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.748273087Z"
+    created: "2022-06-24T22:36:12.625165369Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: 4e29b39e83366b87fb5edf11edb6ba694033cde5f3d2b2b8b4b8f79121545887
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -101,7 +112,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.5.tgz
     version: v2.0.0-beta.5
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.725515425Z"
+    created: "2022-06-24T22:36:12.599763693Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: 284644e43bc924ec05fe77cfeeb79f1bbb4cf1866310c7e5f2cdc57e771e8082
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -112,7 +123,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.4.tgz
     version: v2.0.0-beta.4
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.708719631Z"
+    created: "2022-06-24T22:36:12.575102827Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: baa948a31a85c99887b8374262206400d85735f269a49e0ccb50cee16bddf455
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -123,7 +134,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.3.tgz
     version: v2.0.0-beta.3
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.684393151Z"
+    created: "2022-06-24T22:36:12.533278307Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: 54388ccf2c4811fb6efd2a7823292d259812a5373721d140a96afa0511ef3d76
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -134,7 +145,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.2.tgz
     version: v2.0.0-beta.2
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.596460437Z"
+    created: "2022-06-24T22:36:12.391759409Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: 5e94b175024b9da65a34dff0d27ed456744f306344e78fd4b294435e82c20187
     home: https://github.com/jadarsie/azure-service-operator/v2
@@ -145,7 +156,7 @@ entries:
     - azure-service-operator-v2.0.0-beta.1.tgz
     version: v2.0.0-beta.1
   - apiVersion: v2
-    created: "2022-06-22T22:31:57.572377659Z"
+    created: "2022-06-24T22:36:12.349498183Z"
     description: Deploy components and dependencies of azure-service-operator
     digest: 644b1f9e38f7cd868963e52dc449cbb16231c10b3ee0ba303e864f1a392444fb
     home: https://github.com/Azure/azure-service-operator/v2
@@ -155,4 +166,4 @@ entries:
     urls:
     - azure-service-operator-v2.0.0-alpha.6.tgz
     version: v2.0.0-alpha.6
-generated: "2022-06-22T22:31:57.556082472Z"
+generated: "2022-06-24T22:36:12.311062213Z"
