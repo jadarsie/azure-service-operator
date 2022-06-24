@@ -1,0 +1,7 @@
+{%- assign status = content.status -%}
+
+{
+  "properties": {
+      "provisioningState": {{ status.provisioningState }}
+  }
+}
