@@ -14,6 +14,21 @@
                     "KubernetesToAzure": "resourcegroups/k2a.json"
                 }
             }
+        },
+        {
+            "ApiVersion": "2020-01-01-preview",
+            "ResourceType": "managedcluster",
+            "ProviderName": "Microsoft.ArcInAzure",
+            "ResourceMapping": {
+                "Version": "v1beta20210501",
+                "Group": "managedclusters.containerservice.azure.com",
+                "Kind": "ManagedCluster",
+                "Name": "managedcluster",
+                "Liquid": {
+                    "AzureToKubernetes": "managedcluster/a2k.json",
+                    "KubernetesToAzure": "managedcluster/k2a.json"
+                }
+            }
         }
     ]
 }
