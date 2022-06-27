@@ -1,14 +1,14 @@
 {
     "mappings": [
         {
-            "ApiVersion": "2020-01-01-preview",
+            "ApiVersion": "2020-02-01-preview",
             "ResourceType": "resourcegroups",
             "ProviderName": "Microsoft.ArcInAzure",
             "ResourceMapping": {
                 "Version": "v1beta20200601",
                 "Group": "resources.azure.com",
                 "Kind": "ResourceGroup",
-                "Name": "resourcegroups",
+                "Name": "resourcegroups.resources.azure.com",
                 "Liquid": {
                     "AzureToKubernetes": "resourcegroups/a2k.json",
                     "KubernetesToAzure": "resourcegroups/k2a.json"
@@ -16,14 +16,14 @@
             }
         },
         {
-            "ApiVersion": "2020-01-01-preview",
+            "ApiVersion": "2020-02-01-preview",
             "ResourceType": "managedcluster",
             "ProviderName": "Microsoft.ArcInAzure",
             "ResourceMapping": {
                 "Version": "v1beta20210501",
-                "Group": "managedclusters.containerservice.azure.com",
+                "Group": "containerservice.azure.com",
                 "Kind": "ManagedCluster",
-                "Name": "managedcluster",
+                "Name": "managedclusters.containerservice.azure.com",
                 "Liquid": {
                     "AzureToKubernetes": "managedcluster/a2k.json",
                     "KubernetesToAzure": "managedcluster/k2a.json"

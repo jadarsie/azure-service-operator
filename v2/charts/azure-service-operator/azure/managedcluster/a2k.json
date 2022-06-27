@@ -11,10 +11,10 @@
         "vmSize": "Standard_D2s_v3"
       }
     ],
+    "dnsPrefix": {{ resource.dnsPrefix | json }},
     "identity": {
       "type": "SystemAssigned"
     },
-    "dnsPrefix": {{ resource.dnsPrefix | json }},
     "location": {{ content.location | json }},
     "owner": {
       "name": {{ resource.dnsPrefix | json }}

@@ -1,7 +1,7 @@
 {
     "mappings": [
         {
-            "ApiVersion": "2020-01-01-preview",
+            "ApiVersion": "2020-02-01-preview",
             "ResourceType": "resourcegroups",
             "ProviderName": "Microsoft.ArcInAzure",
             "ResourceMapping": {

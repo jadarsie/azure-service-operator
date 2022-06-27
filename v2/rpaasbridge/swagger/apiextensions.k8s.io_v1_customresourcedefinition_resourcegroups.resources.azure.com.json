@@ -3,7 +3,7 @@
   "info": {
     "title": "ArcInAzure",
     "description": "The Microsoft.ArcInAzure Rest API spec.",
-    "version": "2020-01-01-preview",
+    "version": "2020-02-01-preview",
     "x-ms-code-generation-settings": {
       "name": "ArcInAzureClient"
     }
