@@ -1,6 +1,3 @@
-{%- assign spec = content.spec -%}
-{%- assign status = content.status -%}
-
 {
   "properties": {
     "agentPoolProfiles": [
@@ -12,14 +9,13 @@
         "vmSize": "Standard_D2s_v3"
       }
     ],
+    "dnsPrefix": "blah",
     "identity": {
       "type": "SystemAssigned"
     },
-    "dnsPrefix": {{ spec.dnsPrefix | json }},
-    "location": {{ content.location | json }},
     "owner": {
-      "name": {{ spec.dnsPrefix | json }}
+      "name": "blah"
     },
-    "provisioningState": {{ status.provisioningState }}
+    "provisioningState": {{ content.status.provisioningState }}
   }
 }

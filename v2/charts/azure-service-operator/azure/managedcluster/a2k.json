@@ -1,5 +1,3 @@
-{%- assign resource = content.properties -%}
-
 {
   "spec": {
     "agentPoolProfiles": [
@@ -11,13 +9,13 @@
         "vmSize": "Standard_D2s_v3"
       }
     ],
-    "dnsPrefix": {{ resource.dnsPrefix | json }},
+    "dnsPrefix": "blah",
     "identity": {
       "type": "SystemAssigned"
     },
-    "location": {{ content.location | json }},
     "owner": {
-      "name": {{ resource.dnsPrefix | json }}
-    }
+      "name": "blah"
+    },
+    "location": {{ content.location | json }}
   }
 }
